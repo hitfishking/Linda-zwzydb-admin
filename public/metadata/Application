@@ -1,0 +1,33 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "ZhongModel",
+            "KeShuTreeModel",
+            "KeModel",
+            "ShuModel",
+            "PicModel"
+        ],
+        "name": "ExtjsTest01",
+        "stores": [
+            "ZhongStore",
+            "KeShuTreeStore",
+            "KeStore",
+            "ShuStore",
+            "PicStore"
+        ],
+        "views": [
+            "winSelectPic",
+            "MyPanel15"
+        ]
+    },
+    "designerId": "application"
+}

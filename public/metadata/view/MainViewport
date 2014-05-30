@@ -1,0 +1,2242 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|initialView": true,
+        "designer|userClassName": "MainViewport",
+        "layout": "border"
+    },
+    "designerId": "c7af760a-c4e0-4f58-94ea-1f3b2b45cfa4",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "leftContainer",
+                "layout|region": "west",
+                "width": 170
+            },
+            "designerId": "fea21b8b-aa23-40c4-b483-b9976de4ac93"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "rightContainer",
+                "layout|region": "east",
+                "width": 170
+            },
+            "designerId": "43898f77-a6f0-4592-bc94-f725f06cc477"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "centerContainer",
+                "layout": "border",
+                "layout|region": "center"
+            },
+            "designerId": "a14dbb5f-bbb6-452a-82aa-c92ad0ab36a3",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "border": false,
+                        "designer|displayName": "titleForm",
+                        "frameHeader": false,
+                        "height": 75,
+                        "layout|region": "north",
+                        "title": null
+                    },
+                    "designerId": "1d5fbc20-b1ff-4ad7-8f7f-a76226a2d04e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 0,
+                                "html": "<h1>园林植物种质资源数据库  数据管理系统</h1>",
+                                "text": null,
+                                "width": 0
+                            },
+                            "designerId": "4043ca8a-46cc-4fe7-a4df-6cd793a3ef42"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "designer|createAlias": null,
+                        "designer|displayName": "MainTabs",
+                        "layout|region": "center",
+                        "tabPosition": "left"
+                    },
+                    "designerId": "58be7d0c-a364-4ddc-9ebf-f7f8901ba065",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "tab1科属种维护",
+                                "layout": "border",
+                                "title": "科属种维护"
+                            },
+                            "designerId": "7625850e-cd2d-4741-af04-079a9fb2e136",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "e0cd4d29-44bb-4cb6-9e00-c868288be7ac"
+                                },
+                                {
+                                    "type": "Ext.tree.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "animate": true,
+                                        "autoScroll": true,
+                                        "border": "0,0,0,30",
+                                        "collapsible": true,
+                                        "designer|createAlias": null,
+                                        "frame": true,
+                                        "id": null,
+                                        "itemId": null,
+                                        "layout|region": "west",
+                                        "layout|split": true,
+                                        "rootVisible": false,
+                                        "store": "KeShuTreeStore",
+                                        "title": "科属列表/维护",
+                                        "width": 240
+                                    },
+                                    "configAlternates": {
+                                        "bodyStyle": "string"
+                                    },
+                                    "designerId": "18b645a7-cd66-429e-a020-ae1372fb5787",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tree.View",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "rootVisible": false
+                                            },
+                                            "designerId": "790fe705-cc43-4526-8cb5-cb1f87a7a9be"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top"
+                                            },
+                                            "designerId": "804c48f1-5f01-44e0-9cd1-964b02883da3",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "新建",
+                                                        "icon": "pics/new.png",
+                                                        "layout|flex": null,
+                                                        "text": null,
+                                                        "tooltip": "新建"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
+                                                    },
+                                                    "designerId": "965ef9e8-eb53-4891-8ff8-535f97a04b2c",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.Menu",
+                                                            "reference": {
+                                                                "name": "menu",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "width": 120
+                                                            },
+                                                            "designerId": "11611e9e-581a-4e6a-b0f1-f3fe33306fa6",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.menu.Item",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "text": "新建科"
+                                                                    },
+                                                                    "designerId": "db8bb815-d188-4cbe-bb8e-51c1d7d81ecd",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "fixedfunction",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|params": [
+                                                                                    "item",
+                                                                                    "e"
+                                                                                ],
+                                                                                "fn": "handler",
+                                                                                "implHandler": [
+                                                                                    "//新建科\r",
+                                                                                    "//直接在tree.Panel中增加新节点即可.\r",
+                                                                                    "mytree = this.up('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                                    "rootnode = mytree.getRootNode();\r",
+                                                                                    "\r",
+                                                                                    "rootnode.insertBefore(\r",
+                                                                                    "   {\r",
+                                                                                    "    text: 'New 科',\r",
+                                                                                    "    leaf: false,\r",
+                                                                                    "    ntype: '科',\r",
+                                                                                    "    expanded: true,\r",
+                                                                                    "    newnode: true\r",
+                                                                                    "   },\r",
+                                                                                    "    rootnode.getChildAt(0)\r",
+                                                                                    ");\r",
+                                                                                    "\r",
+                                                                                    "// rootnode.appendChild({text: 'New Node', leaf: false});\r",
+                                                                                    "\r",
+                                                                                    ""
+                                                                                ]
+                                                                            },
+                                                                            "designerId": "9307864c-af60-4ad9-b123-38000d070d46"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.menu.Item",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "text": "新建属"
+                                                                    },
+                                                                    "designerId": "6254261a-4c42-4ce8-816a-cb87c729868e",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "fixedfunction",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|params": [
+                                                                                    "item",
+                                                                                    "e"
+                                                                                ],
+                                                                                "fn": "handler",
+                                                                                "implHandler": [
+                                                                                    "//新建属\r",
+                                                                                    "//首先确定选择的节点，该节点必须为ntype=\"科\"\r",
+                                                                                    "//然后向其下append新节点。\r",
+                                                                                    "mytree = this.up('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                                    "selectedNode = mytree.getSelectionModel().getSelection()[0];\r",
+                                                                                    "\r",
+                                                                                    "if (selectedNode.data.ntype == '科'){\r",
+                                                                                    "  selectedNode.appendChild(\r",
+                                                                                    "    {\r",
+                                                                                    "        text: 'New 属',\r",
+                                                                                    "        leaf: false,\r",
+                                                                                    "        ntype: '属',\r",
+                                                                                    "        expanded: true,\r",
+                                                                                    "        newnode: true\r",
+                                                                                    "    }\r",
+                                                                                    "  );\r",
+                                                                                    "} else {\r",
+                                                                                    "  alert(\"请先选择一个科！\");\r",
+                                                                                    "  console.log(\"请先选择一个科！\");\r",
+                                                                                    "}\r",
+                                                                                    "\r",
+                                                                                    "\r",
+                                                                                    "\r",
+                                                                                    ""
+                                                                                ]
+                                                                            },
+                                                                            "designerId": "aa7c97df-a559-4f43-abe4-883dd8f38210"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|createAlias": "",
+                                                        "designer|displayName": "编辑",
+                                                        "icon": "pics/edit.png",
+                                                        "layout|flex": null,
+                                                        "text": null,
+                                                        "tooltip": "编辑"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
+                                                    },
+                                                    "designerId": "444eda8e-6e43-4e17-993d-371139275341",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "// mytree = this.up('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                    "// mytree.fireEvent('beforeedit', this);\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "f9d7d455-4d6b-45a2-9862-83ad98c5966e"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "撤销",
+                                                        "icon": "pics/undo.png",
+                                                        "layout|flex": null,
+                                                        "text": null,
+                                                        "tooltip": "撤销修改"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
+                                                    },
+                                                    "designerId": "d843ae7e-767b-4f52-9594-6f96f2ace447",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "mytree = this.up('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                    "mytree.store.load();\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "1f9e7d8e-5811-40bb-86e7-3e5781b667db"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "上传同步",
+                                                        "icon": "pics/commit.png",
+                                                        "layout|flex": null,
+                                                        "text": null,
+                                                        "tooltip": "提交到服务器"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
+                                                    },
+                                                    "designerId": "4045b66a-f08a-4407-a5a2-0cbc3edaaba9",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "mytree = this.up('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                    "mytree.store.sync({\r",
+                                                                    "    success: function(batch, options){\r",
+                                                                    "        Ext.MessageBox.alert('成功','保存成功！');\r",
+                                                                    "        mytree.store.load();   //保存后，重新载入，保证取得服务器为新节点生成的id.\r",
+                                                                    "    },\r",
+                                                                    "    failure: function(batch, options){\r",
+                                                                    "        Ext.MessageBox.alert('失败','保存失败！请排除问题后再试！');\r",
+                                                                    "    }\r",
+                                                                    "\r",
+                                                                    "});\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "bee62407-bc85-4db5-8db5-60c9a25d2e83"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "删除",
+                                                        "icon": "pics/delete.gif",
+                                                        "itemId": "btnDelete",
+                                                        "layout|flex": null,
+                                                        "text": null,
+                                                        "tooltip": "删除"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
+                                                    },
+                                                    "designerId": "a67670a8-edb5-4fd8-92e8-44a57229929d",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "//只能选择科、属进行删除，种不能删除。\r",
+                                                                    "//级联删除前需要进行确认。\r",
+                                                                    "\r",
+                                                                    "mytree = this.up('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                    "selectedNode = mytree.getSelectionModel().getSelection()[0];\r",
+                                                                    "\r",
+                                                                    "if (typeof(selectedNode) == 'undefined') {\r",
+                                                                    "    Ext.MessageBox.alert('提示','请先选择一个科或属，以便进行删除！');\r",
+                                                                    "    return;\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "if (selectedNode.data.ntype == '科'){\r",
+                                                                    "    promptmsg = '删除【'+selectedNode.data.text+'】节点,将删除其下的所有属节点和种节点！确认删除吗?';\r",
+                                                                    "} else {\r",
+                                                                    "    promptmsg = '删除【'+selectedNode.data.text+'】节点,将删除其下的所有种节点！确认删除吗?';\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "if ((selectedNode.data.ntype == '科') || (selectedNode.data.ntype == '属')) {\r",
+                                                                    "\r",
+                                                                    "    Ext.MessageBox.confirm('删除警告', promptmsg, delconfirm, this);\r",
+                                                                    "\r",
+                                                                    "} else {\r",
+                                                                    "    Ext.MessageBox.alert('提示','请先选择一个科或属，以便进行删除！');\r",
+                                                                    "    return;\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "//handler函数对象内部的自定义函数.\r",
+                                                                    "function delconfirm(id){\r",
+                                                                    "    if (id == 'yes'){\r",
+                                                                    "        selectedNode.remove(true);\r",
+                                                                    "        return;\r",
+                                                                    "    } else {\r",
+                                                                    "        return;\r",
+                                                                    "    }\r",
+                                                                    "}"
+                                                                ]
+                                                            },
+                                                            "designerId": "32499586-80c6-4e40-9535-e9f9bc03b2fd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onTreepanelItemDblClick",
+                                                "implHandler": [
+                                                    "// alert(record.data.text + record.data.leaf + record.data.expanded + record.data.children);\r",
+                                                    "// alert(record.get('text')+ record.get('id')+record.get('leaf'));\r",
+                                                    "\r",
+                                                    "if (record.isLeaf()) {\r",
+                                                    "   Ext.getStore('ZhongStore').load({\r",
+                                                    "        params: {\r",
+                                                    "            id: record.get('id'),\r",
+                                                    "          text: record.get('text'),\r",
+                                                    "          leaf: record.get('leaf')\r",
+                                                    "        }\r",
+                                                    "   });\r",
+                                                    "\r",
+                                                    "   Ext.getStore('PicStore').load({\r",
+                                                    "        params: {\r",
+                                                    "            id: record.get('id'),\r",
+                                                    "          text: record.get('text'),\r",
+                                                    "          leaf: record.get('leaf')\r",
+                                                    "        }\r",
+                                                    "   });\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    ""
+                                                ],
+                                                "name": "itemdblclick",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "52a8b373-0cf8-4a05-a427-ec7f9334bcd0"
+                                        },
+                                        {
+                                            "type": "Ext.grid.plugin.CellEditing",
+                                            "reference": {
+                                                "name": "plugins",
+                                                "type": "array"
+                                            },
+                                            "codeClass": "Ext.grid.plugin.CellEditing",
+                                            "designerId": "c254fc43-b76c-44c6-97db-1b83d39cd7a0",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onCellEditingBeforeEdit",
+                                                        "implHandler": [
+                                                            "//叶节点禁止编辑\r",
+                                                            "//利用了Model(record)上由NodeInterface提供的tree node操作的方法和属性。\r",
+                                                            "\r",
+                                                            "if (e.record.isLeaf()) {\r",
+                                                            "  return false;\r",
+                                                            "}\r",
+                                                            ""
+                                                        ],
+                                                        "name": "beforeedit",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "4322593f-c284-4e82-bc35-756c7d7f7bed"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.tree.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "text",
+                                                "flex": 1,
+                                                "height": 0,
+                                                "text": null
+                                            },
+                                            "designerId": "ad1926f8-f68d-4360-b647-1ffecbe31b15",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "selectOnFocus": true
+                                                    },
+                                                    "designerId": "ccf79457-b447-4e3d-9317-40e9ab1fc506"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "autoScroll": true,
+                                        "bodyPadding": 10,
+                                        "id": "",
+                                        "itemId": "formZhong",
+                                        "layout|region": "center",
+                                        "readonly": true,
+                                        "title": "种编辑表单"
+                                    },
+                                    "configAlternates": {
+                                        "readonly": "boolean"
+                                    },
+                                    "designerId": "73b3c614-e91c-441a-8f6e-ca4b6157224a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "readonly",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top"
+                                            },
+                                            "designerId": "934d9f8d-e9c5-44ff-9f30-9c3831ef489b",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "进入编辑态"
+                                                    },
+                                                    "designerId": "c32c1098-bff1-420a-8658-a5b11bcfa4e3",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "theFormPanel = this.up('form[title=\"种编辑表单\"]');\r",
+                                                                    "theForm = theFormPanel.getForm();\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "if (theFormPanel.readOnly) {\r",
+                                                                    "\r",
+                                                                    "  theForm.getFields().each (function (field) {\r",
+                                                                    "    field.setReadOnly (false);\r",
+                                                                    "  });\r",
+                                                                    "  theFormPanel.readOnly = false;\r",
+                                                                    "  this.setText(\"退出编辑态\");\r",
+                                                                    "\r",
+                                                                    "} else {\r",
+                                                                    "\r",
+                                                                    "  theForm.getFields().each (function (field) {\r",
+                                                                    "    field.setReadOnly (true);\r",
+                                                                    "  });\r",
+                                                                    "  theFormPanel.readOnly = true;\r",
+                                                                    "  this.setText(\"进入编辑态\");\r",
+                                                                    "\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "2e9b9927-4193-4ea9-981b-9e8624c82ccf"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "保存"
+                                                    },
+                                                    "designerId": "0a3397e3-8c4f-4a16-bc40-965723ec3fdb",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "theForm = this.up('form[title=\"种编辑表单\"]');\r",
+                                                                    "theForm.updateRecord();\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "theRecord=theForm.getRecord();\r",
+                                                                    "console.log(theRecord);\r",
+                                                                    "\r",
+                                                                    "theRecord.store.sync({\r",
+                                                                    "    success: function(rec, op){\r",
+                                                                    "         Ext.MessageBox.alert('成功','保存成功！');\r",
+                                                                    "    },\r",
+                                                                    "    failure: function(rec, op){\r",
+                                                                    "         Ext.MessageBox.alert('失败','保存失败！请排除问题后再试！');\r",
+                                                                    "    }\r",
+                                                                    "});\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "74116966-df11-4130-b620-63f4b7c8ecb7"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "删除"
+                                                    },
+                                                    "designerId": "68b36671-af0a-4cbc-9786-10d182d91d3a",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "theForm = this.up('form[title=\"种编辑表单\"]');\r",
+                                                                    "theRecord=theForm.getRecord();\r",
+                                                                    "console.log(theRecord);\r",
+                                                                    "\r",
+                                                                    "if (typeof(theRecord) == 'undefined') {\r",
+                                                                    "   Ext.MessageBox.alert('提示','当前没有要删除的记录!');\r",
+                                                                    "   return;\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "Ext.MessageBox.confirm('删除警告', '确认删除当前种吗?', delconfirm, this);\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "//handler函数对象内部的自定义函数.\r",
+                                                                    "function delconfirm(id){\r",
+                                                                    "    if (id == 'yes'){\r",
+                                                                    "        Ext.getStore('ZhongStore').remove(theRecord);\r",
+                                                                    "        Ext.getStore('ZhongStore').sync({\r",
+                                                                    "            success: function(rec, op){\r",
+                                                                    "                 Ext.MessageBox.alert('成功','删除成功！');\r",
+                                                                    "            },\r",
+                                                                    "            failure: function(rec, op){\r",
+                                                                    "                 Ext.MessageBox.alert('失败','删除失败！请排除问题后再试！');\r",
+                                                                    "            }\r",
+                                                                    "        });\r",
+                                                                    "\r",
+                                                                    "        theForm.getForm().reset();\r",
+                                                                    "\r",
+                                                                    "    } else {\r",
+                                                                    "        return;\r",
+                                                                    "    }\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "5a0e6015-7764-423b-843f-64f9c3c042d8"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "新建"
+                                                    },
+                                                    "designerId": "8c1d0296-d763-4a5c-9b35-afdada4d8b28",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "//只有在用户已经在树上选择了一个属，且该属下没有种的情况下，才能建立一个新种。\r",
+                                                                    "//新种的建立，是在空的store中加入一个新记录，并上提到form上。\r",
+                                                                    "\r",
+                                                                    "// mytree = Ext.ComponentQuery.query('treepanel[title=\"科属列表/维护\"]');\r",
+                                                                    "// selectedNode = mytree.getSelectionModel().getSelection()[0];\r",
+                                                                    "\r",
+                                                                    "// if (selectedNode.data.ntype == '属'){\r",
+                                                                    "// //   selectedNode.appendChild(\r",
+                                                                    "// //     {\r",
+                                                                    "// //         text: 'New 属',\r",
+                                                                    "// //         leaf: false,\r",
+                                                                    "// //         ntype: '属',\r",
+                                                                    "// //         expanded: true,\r",
+                                                                    "// //         newnode: true\r",
+                                                                    "// //     }\r",
+                                                                    "// //   );\r",
+                                                                    "// } else {\r",
+                                                                    "//   alert(\"请先在左侧科属树种，选择种所属的选择一个属！\");\r",
+                                                                    "// }\r",
+                                                                    "//--------------------------------------------------------------------------\r",
+                                                                    "//新建种，是在一个独立的\"空间\"内实施的，不需要从外部引入信息。\r",
+                                                                    "//具体逻辑是：在store中加入一条新记录，并将其上提到form上。\r",
+                                                                    "\r",
+                                                                    "//首先清除ZhongStore中可能存在的记录，保证只有一条记录在ZhongStore中。\r",
+                                                                    "Ext.getStore('ZhongStore').removeAll();\r",
+                                                                    "\r",
+                                                                    "zhongAdded = Ext.getStore('ZhongStore').add({zhong_id: '111'});\r",
+                                                                    "\r",
+                                                                    "theFormPanel = this.up('form[title=\"种编辑表单\"]');\r",
+                                                                    "theFormPanel.loadRecord(zhongAdded[0]);\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "efa3acfe-c01d-4e09-9f43-ccf2e96994bc"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 83,
+                                                "padding": null,
+                                                "title": "科属信息"
+                                            },
+                                            "designerId": "3fc9fc1e-b4b5-41d0-8aff-8f927fc6edb9",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "KeCombo",
+                                                        "displayField": "name",
+                                                        "editable": false,
+                                                        "emptyText": "请选择一个科",
+                                                        "fieldLabel": "科名",
+                                                        "forceSelection": true,
+                                                        "itemId": "kecombo",
+                                                        "labelWidth": 40,
+                                                        "layout|anchor": "100%",
+                                                        "maxHeight": 160,
+                                                        "name": "ke_id",
+                                                        "queryMode": "local",
+                                                        "store": "KeStore",
+                                                        "valueField": "_id"
+                                                    },
+                                                    "designerId": "a219b652-0081-4ef5-b31c-576fff194a0a",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onKecomboSelect",
+                                                                "implHandler": [
+                                                                    "// alert(combo.value);\r",
+                                                                    "\r",
+                                                                    "theForm = this.down('form[itemId=\"formZhong\"]'); console.log(theForm);\r",
+                                                                    "theShuCombo = theForm.down('combobox[itemId=\"shucombo\"]'); console.log(theShuCombo);\r",
+                                                                    "\r",
+                                                                    "selectedKeId = records[0].data._id;\r",
+                                                                    "\r",
+                                                                    "theShuCombo.store.clearFilter(true);\r",
+                                                                    "theShuCombo.store.filter(\"ke_id\",selectedKeId);\r",
+                                                                    "// theShuCombo.rawValue = '';\r",
+                                                                    "theShuCombo.clearValue();\r",
+                                                                    "\r",
+                                                                    "console.log(records[0]);\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ],
+                                                                "name": "select",
+                                                                "scope": "me"
+                                                            },
+                                                            "designerId": "5297236e-3ce6-4f31-bbe2-64c314b36870"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "ShuCombo",
+                                                        "displayField": "name",
+                                                        "editable": false,
+                                                        "emptyText": "请选择一个属",
+                                                        "fieldLabel": "属名",
+                                                        "forceSelection": true,
+                                                        "itemId": "shucombo",
+                                                        "labelWidth": 40,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shu_id2",
+                                                        "queryMode": "local",
+                                                        "store": "ShuStore",
+                                                        "valueField": "_id"
+                                                    },
+                                                    "designerId": "d3388d1e-cc3a-49bb-8e83-45b7ead9350d"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "种名称",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "cname"
+                                            },
+                                            "designerId": "1bb19007-c1fb-4202-b82b-f04bdee3149b"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "拉丁名",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "ldname"
+                                            },
+                                            "designerId": "f5b50f92-3000-4689-a0f0-bc4ade82ec67"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "别名",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "aliases"
+                                            },
+                                            "designerId": "ddaa57cf-40cc-49ae-8ba8-c7562b6a1b32"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "形态",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "xingtai"
+                                            },
+                                            "designerId": "14ce3e1c-6a9d-4556-94e4-18f48c73ea6f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "功能",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "gongneng"
+                                            },
+                                            "designerId": "364f8dcf-fe8b-492e-958e-8f8380a2aa59"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "观赏",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "guanshang"
+                                            },
+                                            "designerId": "2c6ae422-48e3-47fb-84b4-a1116fab2295"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "花期",
+                                                "labelWidth": 50,
+                                                "layout|anchor": "100%",
+                                                "name": "huaqi"
+                                            },
+                                            "designerId": "447ba2e0-c1cd-463e-af96-4bcc7d9bda8f"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "图片地址",
+                                                "labelWidth": 60,
+                                                "layout|anchor": "100%",
+                                                "name": "pics"
+                                            },
+                                            "designerId": "3c621f01-3d98-4bf9-98c1-cd4e3389f7b9"
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": null,
+                                                "title": "生态数据"
+                                            },
+                                            "designerId": "0a191824-ee0d-43e8-b96a-49cf8e82847e",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "根系",
+                                                        "labelWidth": 50,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.genxi"
+                                                    },
+                                                    "designerId": "339fcf3e-a266-42e5-ac75-dcce5d866db7"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "空气湿度",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.huminity",
+                                                        "width": 459
+                                                    },
+                                                    "designerId": "da06fb03-01ff-48c9-b6ac-9109070ea10d"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "光照强度",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.light"
+                                                    },
+                                                    "designerId": "6a951726-a832-4295-83d1-f36879a2f3fc"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "土壤湿度",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.moisture"
+                                                    },
+                                                    "designerId": "63538bd3-f750-44d0-b56a-a9b6160813c1"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "栽植难易性",
+                                                        "labelWidth": 70,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.nanyi"
+                                                    },
+                                                    "designerId": "08c8a6fe-b360-42c7-ac5d-26195b5ed875"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "耐盐碱性",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.salt"
+                                                    },
+                                                    "designerId": "a12f4e29-b4c9-41f8-b381-f79d32edba8f"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "寿命",
+                                                        "labelWidth": 50,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.shouming"
+                                                    },
+                                                    "designerId": "5f991a34-a546-44a6-b065-237495cfc49f"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "土壤",
+                                                        "labelWidth": 50,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.soil"
+                                                    },
+                                                    "designerId": "14739d90-338a-439f-b352-d47d37962b09"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "生长速度",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.sudu"
+                                                    },
+                                                    "designerId": "639b4d0c-fd49-4d9e-b87b-8cc0d195b744"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "适宜温度",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "shengtai.temperature"
+                                                    },
+                                                    "designerId": "89a119a2-9813-4d64-9823-5047a3aa1f8d"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|anchor": "100%",
+                                                "title": "工程数据",
+                                                "width": 150
+                                            },
+                                            "designerId": "85c34793-1886-41ef-9f03-dc809873db37",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "自然区域",
+                                                        "height": 74,
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.ziran_quyu"
+                                                    },
+                                                    "designerId": "183331b1-8ec7-4519-b788-eb622dee7a17"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "应用区域",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.yingyong_quyu"
+                                                    },
+                                                    "designerId": "10929616-0061-4b66-a8db-b2a1b75a60fe"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "识别特征",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.shibie_tezheng"
+                                                    },
+                                                    "designerId": "5a78005d-e2d7-4a93-9658-ba402f238399"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "种植密度",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.zhongzhi_midu"
+                                                    },
+                                                    "designerId": "c42acb1e-5ee5-4450-83c1-2bb97e36854b"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "苗木规格",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.miaomu_guige",
+                                                        "width": 150
+                                                    },
+                                                    "designerId": "5d5b73e3-4940-455e-a9c0-c674d4d25687"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "设计建议",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.sheji_jianyi"
+                                                    },
+                                                    "designerId": "28ff3eee-b979-4c13-ae1d-416e818c01ad"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "施工要点",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.shigong_yaodian"
+                                                    },
+                                                    "designerId": "525204d0-076f-4476-b8bf-66258490d004"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "养护要点",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.yanghu_yaodian"
+                                                    },
+                                                    "designerId": "75ee307b-3ec9-44c3-8370-3d2cabbb5fcb"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "参考价格",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": "100%",
+                                                        "name": "engineering.cankao_jiage"
+                                                    },
+                                                    "designerId": "a722d927-edf5-44cd-be32-3a56e05688b7"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "autoScroll": true,
+                                        "collapsed": false,
+                                        "collapsible": true,
+                                        "container|align": "stretch",
+                                        "frame": true,
+                                        "layout": "vbox",
+                                        "layout|region": "east",
+                                        "title": "种图片维护",
+                                        "width": 250
+                                    },
+                                    "designerId": "392c324c-90ef-458c-82d0-49101c994b3d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.toolbar.Toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "border": 4,
+                                                "dock": "top"
+                                            },
+                                            "designerId": "cfe8ffde-2b3e-4d98-8a7c-46629039dc53",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "增加图片"
+                                                    },
+                                                    "designerId": "f5685727-aba2-45a8-9290-6372788b0526",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "theWindow = Ext.create('ExtjsTest01.view.winSelectPic');\r",
+                                                                    "theWindow.show();"
+                                                                ]
+                                                            },
+                                                            "designerId": "768dba9e-6550-4469-8193-63a3fd3f3603"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "保存图片"
+                                                    },
+                                                    "designerId": "87e6e914-d6c7-4573-8d6b-1a4db03e5d53"
+                                                },
+                                                {
+                                                    "type": "Ext.button.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "text": "删除图片"
+                                                    },
+                                                    "designerId": "66ca8053-0b12-4faf-a1c2-f213cf104f83",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "button",
+                                                                    "e"
+                                                                ],
+                                                                "fn": "handler",
+                                                                "implHandler": [
+                                                                    "picPanel = this.up('panel[title=\"种图片维护\"]');\r",
+                                                                    "picGrid = picPanel.down('gridpanel');\r",
+                                                                    "\r",
+                                                                    "selectedRecord = picGrid.getSelectionModel().getSelection()[0];\r",
+                                                                    "console.log(selectedRecord);\r",
+                                                                    "\r",
+                                                                    "if (typeof(selectedRecord) == 'undefined') {\r",
+                                                                    "    Ext.MessageBox.alert('提示','请在列表中指定要删除的图片！');\r",
+                                                                    "    return;\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "Ext.MessageBox.confirm('删除警告', '确认删除此文件吗?', delconfirm, this);\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "//handler函数对象内部的自定义函数.\r",
+                                                                    "function delconfirm(id){\r",
+                                                                    "    if (id == 'yes'){\r",
+                                                                    "        Ext.getStore('PicStore').remove(selectedRecord);\r",
+                                                                    "//         Ext.getStore('ZhongStore').sync({\r",
+                                                                    "//             success: function(rec, op){\r",
+                                                                    "//                  Ext.MessageBox.alert('成功','删除成功！');\r",
+                                                                    "//             },\r",
+                                                                    "//             failure: function(rec, op){\r",
+                                                                    "//                  Ext.MessageBox.alert('失败','删除失败！请排除问题后再试！');\r",
+                                                                    "//             }\r",
+                                                                    "//         });\r",
+                                                                    "\r",
+                                                                    "        return;\r",
+                                                                    "    } else {\r",
+                                                                    "        return;\r",
+                                                                    "    }\r",
+                                                                    "}\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "designerId": "cee00bf6-0af2-4624-9d73-54b4dbdcc8d1"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 1,
+                                                "store": "PicStore",
+                                                "title": null
+                                            },
+                                            "designerId": "ffcda75a-4810-4891-822b-60e558c31040",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "designerId": "7810f1c6-96e1-4126-a49a-dc68434cbb2c"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "pic_path",
+                                                        "flex": 1,
+                                                        "height": 0,
+                                                        "text": "Pic_path",
+                                                        "width": 235
+                                                    },
+                                                    "designerId": "3d3131a2-f345-4f66-ba42-778b2ce87137",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "strHtml = '<img style=\"width:97%; margin:0px; padding:0px;\" src=\"' + value + '\"/>' +\r",
+                                                                    "    '<p style=\"margin:0px 0px 5px 0px; text-align:center\">'+ record.get('pic_name') + '</p>';\r",
+                                                                    "\r",
+                                                                    "\r",
+                                                                    "return strHtml;"
+                                                                ]
+                                                            },
+                                                            "designerId": "2e6c9b53-c17b-4c26-80a4-e283aa54592e"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "pic_name",
+                                                        "hidden": true,
+                                                        "text": "Pic_name"
+                                                    },
+                                                    "designerId": "dfad95bb-9e22-4b8b-856d-b2c8ef504cb0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "bodyBorder": false,
+                                        "collapsed": true,
+                                        "collapsible": true,
+                                        "designer|displayName": "hideGrid",
+                                        "layout": "border",
+                                        "layout|region": "west",
+                                        "title": "My Panel",
+                                        "width": 300
+                                    },
+                                    "designerId": "db2643e4-6a36-4436-a935-1bd47bd1c1a2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|region": "center",
+                                                "store": "ZhongStore",
+                                                "title": "My Grid Panel"
+                                            },
+                                            "designerId": "b9d7c43e-9822-499f-8c55-d45441b13ebb",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "designerId": "b17e3533-73de-42f0-ab1c-a059cb10b622"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "ke_id",
+                                                        "text": "Ke_id"
+                                                    },
+                                                    "designerId": "0b50bc4a-1cd3-41e4-a809-0dd4a8f62e7c"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "ke_name",
+                                                        "text": "Ke_name"
+                                                    },
+                                                    "designerId": "dcab080b-53ea-497a-8910-5f6503973cff"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shu_id2",
+                                                        "text": "Shu_id2"
+                                                    },
+                                                    "designerId": "697e0f5a-5a2b-454e-9322-92a5882f3adb"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shu_name",
+                                                        "text": "Shu_name"
+                                                    },
+                                                    "designerId": "06627d54-c619-4194-97f0-713c92298d10"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "zhong_id",
+                                                        "text": "Zhong_id"
+                                                    },
+                                                    "designerId": "5271821b-f225-40c4-954b-9fb8e73f1d93"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "cname",
+                                                        "text": "Cname"
+                                                    },
+                                                    "designerId": "5f386c00-d188-40c9-9cda-42802e36f569"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "ldname",
+                                                        "text": "Ldname"
+                                                    },
+                                                    "designerId": "d0a5591b-a66e-4960-8fcf-e67376348fe3"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "aliases",
+                                                        "text": "Aliases"
+                                                    },
+                                                    "designerId": "ead3fe1f-780a-4a01-adff-7c7784d7b940"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "xingtai",
+                                                        "text": "Xingtai"
+                                                    },
+                                                    "designerId": "1e1795d6-535c-43b7-a899-0c4b25998c0a"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "gongneng",
+                                                        "text": "Gongneng"
+                                                    },
+                                                    "designerId": "2b3bb61a-a2fa-4c2f-b996-5248172c96b4"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "guanshang",
+                                                        "text": "Guanshang"
+                                                    },
+                                                    "designerId": "6ccf8a11-21ba-4624-9bde-de431da4fcad"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "huaqi",
+                                                        "text": "Huaqi"
+                                                    },
+                                                    "designerId": "eda2386a-52bc-4660-9903-549427bc36ab"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "pics",
+                                                        "text": "Pics"
+                                                    },
+                                                    "designerId": "ed3a1ef2-adcb-446f-b730-4f261dcf6672"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Number",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "pic_count",
+                                                        "format": "0,000",
+                                                        "text": "Pic_count"
+                                                    },
+                                                    "designerId": "2efc2b33-403a-48a5-8ecd-781cb357a91d"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.genxi",
+                                                        "text": "Shengtai.genxi"
+                                                    },
+                                                    "designerId": "357336c8-0a53-4b27-b930-c54bd6db3656"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.huminity",
+                                                        "text": "Shengtai.huminity"
+                                                    },
+                                                    "designerId": "2b921577-3fc3-458a-90e2-b330f6bdfaa7"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.light",
+                                                        "text": "Shengtai.light"
+                                                    },
+                                                    "designerId": "f24ac470-61d0-48db-a915-91df86a40e0b"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.moisture",
+                                                        "text": "Shengtai.moisture"
+                                                    },
+                                                    "designerId": "47b018ed-1b2f-451b-a710-aa1ecdd89365"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.nanyi",
+                                                        "text": "Shengtai.nanyi"
+                                                    },
+                                                    "designerId": "2e167f17-83c2-421b-a92d-5f986b11b9e3"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.salt",
+                                                        "text": "Shengtai.salt"
+                                                    },
+                                                    "designerId": "4f98b2f4-e0f2-4791-a911-8b5867f0358b"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.shouming",
+                                                        "text": "Shengtai.shouming"
+                                                    },
+                                                    "designerId": "4f86a884-293c-4add-bef4-7b11460823ea"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.soil",
+                                                        "text": "Shengtai.soil"
+                                                    },
+                                                    "designerId": "78c32c71-1ba4-4e58-8d34-5cf66b20e075"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.sudu",
+                                                        "text": "Shengtai.sudu"
+                                                    },
+                                                    "designerId": "d5068239-7edf-418f-94fd-e665893a8a43"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "shengtai.temperature",
+                                                        "text": "Shengtai.temperature"
+                                                    },
+                                                    "designerId": "f0970672-597b-422d-b7d6-4127f42fe2c0"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.cankao_jiage",
+                                                        "text": "Engineering.cankao_jiage"
+                                                    },
+                                                    "designerId": "51b8e7e5-764f-4804-9eab-012bf53dfd8f"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.miaomu_guige",
+                                                        "text": "Engineering.miaomu_guige"
+                                                    },
+                                                    "designerId": "a36ff4e8-8620-4afc-9f53-3e3740a1df8a"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.sheji_jianyi",
+                                                        "text": "Engineering.sheji_jianyi"
+                                                    },
+                                                    "designerId": "de5343da-9e9a-44f2-a5b8-fd975d9363a7"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.shibie_tezheng",
+                                                        "text": "Engineering.shibie_tezheng"
+                                                    },
+                                                    "designerId": "ff97fa4d-3fa0-4ff7-9189-0993f30eee59"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.shigong_yaodian",
+                                                        "text": "Engineering.shigong_yaodian"
+                                                    },
+                                                    "designerId": "218896b4-435c-4d2b-a6ff-3edbab931030"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.yanghu_yaodian",
+                                                        "text": "Engineering.yanghu_yaodian"
+                                                    },
+                                                    "designerId": "89a6ac8a-566e-4df9-b2b8-81f22a394d01"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.yingyong_quyu",
+                                                        "text": "Engineering.yingyong_quyu"
+                                                    },
+                                                    "designerId": "6d3f415d-3277-40f2-9f80-893826ece640"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.zhongzhi_midu",
+                                                        "text": "Engineering.zhongzhi_midu"
+                                                    },
+                                                    "designerId": "beb3f672-2460-42af-96d4-c323d5ea6b30"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "engineering.ziran_quyu",
+                                                        "text": "Engineering.ziran_quyu"
+                                                    },
+                                                    "designerId": "449b88db-7a9d-4a05-b0ac-d359b2e5f24f"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "编辑"
+                            },
+                            "designerId": "265e0931-8629-4eef-a172-065c88c48242",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "e27cde5e-2940-4304-86f8-9639332b0f88"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "参数"
+                            },
+                            "designerId": "7f97dc73-7051-4cc5-b328-57d8c992f2ff",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "7b2b67d5-cf16-4c0c-b980-b6c42cc04c19"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

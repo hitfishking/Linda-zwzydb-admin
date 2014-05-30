@@ -1,0 +1,68 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "PicStore",
+        "model": "PicModel",
+        "storeId": "PicStore"
+    },
+    "designerId": "5919dad8-4216-468c-84a3-8ad8a3291877",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{\r",
+                    "    create: 'plant/pics_upload',\r",
+                    "    read: 'plant/pics_query',\r",
+                    "    update: 'plant/pics_update',\r",
+                    "    destroy: 'plant/pics_delete'\r",
+                    "}"
+                ]
+            },
+            "designerId": "7a155515-39d9-4c1d-a3b0-96f8c2b59896",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "06b92612-ded0-4c05-afe1-032967d4c958"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonstoreLoad",
+                "implHandler": [
+                    "console.log(records[0]);\r",
+                    ""
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "d6d9f9d9-ab0e-4ffd-a196-049e8cc854c1"
+        }
+    ]
+}
