@@ -54,15 +54,23 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onJsonstoreLoad",
+                "fn": "onJsonstoreBeforeSync",
                 "implHandler": [
-                    "console.log(records[0]);\r",
+                    "//将store中当前node中的数据，赋值给operation对象的params属性中，以便向下传递到proxy中。\r",
+                    "// var node = operation.node;\r",
+                    "// operation.params.text = node.get('text');\r",
+                    "// operation.params.leaf = node.get('leaf');\r",
+                    "// operation.params.expanded = node.get('expanded');\r",
+                    "// operation.params.id = node.get('id');\r",
+                    "// operation.params.ntype = node.get('ntype');\r",
+                    "\r",
+                    "console.log(options);\r",
                     ""
                 ],
-                "name": "load",
+                "name": "beforesync",
                 "scope": "me"
             },
-            "designerId": "d6d9f9d9-ab0e-4ffd-a196-049e8cc854c1"
+            "designerId": "2c2fb89c-168b-40fa-b70c-be66e1734de5"
         }
     ]
 }

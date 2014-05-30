@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.model.KeModel', {
+Ext.define('Linda_db_admin.model.KeModel', {
     extend: 'Ext.data.Model',
 
     requires: [
@@ -23,7 +23,7 @@ Ext.define('ExtjsTest01.model.KeModel', {
         'Ext.data.association.HasMany'
     ],
     uses: [
-        'ExtjsTest01.model.ShuModel'
+        'Linda_db_admin.model.ShuModel'
     ],
 
     idProperty: '_id',
@@ -48,7 +48,7 @@ Ext.define('ExtjsTest01.model.KeModel', {
 
     hasMany: {
         associationKey: 'shus',
-        model: 'ExtjsTest01.model.ShuModel',
+        model: 'Linda_db_admin.model.ShuModel',
         primaryKey: '_id',
         autoLoad: true,
         foreignKey: 'ke_id',

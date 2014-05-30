@@ -55,14 +55,13 @@ class PlantController < ApplicationController
 
 		tmp_zhong = Zhong.where(:_id => params['zhong_id'])[0]
 		if tmp_zhong.nil?
-			p "不能找到id/name为：" + params['zhong_id'] + '/'+params['cname'] + '的种'
-			render :json => {:success => false, :message => '没有找到待更新的种，其可能已被删除!请检查。'}
+			render :json => {:success => false, :message => '[Server]: 没有找到待更新的种，其可能已被删除!请检查。'}
 			return false
 		end
 
     tmp_zhong.update_attributes!(populate_zhong_json())
 
-		render :json => {:success => true}
+		render :json => {:success => true, :message => '[Server]: 种信息更新成功！' }
 	end
 
 	def zhong_create
@@ -71,14 +70,14 @@ class PlantController < ApplicationController
 
 		tmp_shu = Shu.where(:_id => params['shu_id2'])[0]
 		if tmp_shu.nil?
-			p "不能找到id/name为：" + params['shu_id2'] + '/'+params['shu_name'] + '的属.'
-			render :json => {:success => false, :message => '没有找到新种所在的属，其可能已被删除!请检查。'}
+			p "不能找到id/name为：" + params['shu_id2'] + '/' + params['shu_name'] + '的属.'
+			render :json => {:success => false, :message => '[Server]: 没有找到新种所在的属，其可能已被删除!请检查。'}
 			return false
 		end
 
 		tmp_shu.zhongs.create!(populate_zhong_json())
 
-		render :json => {:success => true}
+		render :json => {:success => true, :message => '[Server]: 成功建立新种！'}
 	end
 
 	def zhong_delete
@@ -87,7 +86,7 @@ class PlantController < ApplicationController
 
 		Zhong.where(:_id => params['zhong_id'])[0].destroy
 
-		render :json => {:success => true}
+		render :json => {:success => true, :message => '[Server]: 该种已成功删除!' }
 	end
 
 	#用params[]构造种json数据
@@ -135,9 +134,26 @@ class PlantController < ApplicationController
 
 	  unless request.get?
 			unless params[:upfile].original_filename.empty?
+				uploaded_io = params[:upfile]
+				tmp_file = File.open(Rails.root.join('public', 'upfiles', uploaded_io.original_filename), 'wb+') do |file|
+					file.write(uploaded_io.read)
+				end
+				if tmp_file.nil?
+					render :json => {:success => false, :message => '[Server]: 上传文件发生错误，请检查！'}; return false
+				end
+				#正确上传文件后，立即将此文件上传到Aliyun::OSS Bucket的指定目录下.
+				pic_path = params['picpath']
+				if pic_path.nil? || pic_path == ""
+					render :json => {:success => false, :message => '[Server]: 没有指定文件路径，请检查！'}; return false
+				end
+				tmp_file = File.open(Rails.root.join('public','upfiles',uploaded_io.original_filename))  #此时文件已经存在
+				OSSObject.store(pic_path + uploaded_io.original_filename, tmp_file, 'pic-store')
+				tmp_file.close
 
+				render :json => {:success => true, :message => '[Server]: 文件上传成功!'}; return true
 			end
 	  end
+
 
 	end
 
@@ -182,6 +198,17 @@ class PlantController < ApplicationController
 		p "===pics_delete======"
 		p params
 
+		if params['pic_name'].nil? || params['pic_name'] == ""
+			render :json => {:success => false, :message => '[Server]: 缺少文件名，无法执行删除!请检查。'}
+			return false
+		end
+		if params['picpath'].nil? || params['picpath'] == ""
+			render :json => {:success => false, :message => '[Server]: 缺少文件路径，无法执行删除!请检查。'}
+			return false
+		end
+
+		OSSObject.delete(params['picpath'] + params['pic_name'], 'pic-store')
+		render :json => {:success => true, :message => '[Server]: 文件删除成功!'}
 
 	end
 

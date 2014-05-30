@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.view.winSelectPic', {
+Ext.define('Linda_db_admin.view.winSelectPic', {
     extend: 'Ext.window.Window',
 
     requires: [
@@ -62,22 +62,46 @@ Ext.define('ExtjsTest01.view.winSelectPic', {
                                 {
                                     xtype: 'button',
                                     handler: function(button, e) {
-                                        var form = this.up('form').getForm();
+                                        theForm = Ext.ComponentQuery.query('form[title="种编辑表单"]')[0];
+                                        theRecord = theForm.getRecord();
+                                        pic_path = theRecord.get('pics');
+                                        zhongId = theRecord.get('zhong_id');
 
-                                        if(form.isValid()){
+                                        if (pic_path === "" || typeof(pic_path) == 'undefined'){
+                                            Ext.MessageBox.alert('错误提示','没有定义该种植物的图片目录，请检查！');
+                                            return false;
+                                        } else {
 
-                                            form.submit({
-                                                url: 'plant/pics_upload',
-                                                params: {
-                                                    dongParam1: 'myvalue'
-                                                },
-                                                waitMsg: '正在上传图片...',
-                                                success: function(form,action) {
-                                                    Ext.Msg.alert('Success', action.result.message);
-                                                }
-                                            });
+                                            var form = this.up('form').getForm();
+
+                                            if(form.isValid()){
+
+                                                form.submit({
+                                                    url: 'plant/pics_upload',
+                                                    params: {                         //form.commit()附加参数，upload图片的同时给定目标目录.
+                                                        picpath: pic_path
+                                                    },
+                                                    waitMsg: '正在上传图片...',
+                                                    success: function(form,action) {
+                                                        Ext.Msg.alert('成功', action.result.message);
+                                                        Ext.getStore('PicStore').load({
+                                                            params: {
+                                                                id: theRecord.get(zhongId)
+                                                            }
+                                                        });
+                                                    },
+                                                    failure: function(form,action) {
+                                                        Ext.Msg.alert('失败', action.result.message);
+
+                                                    }
+                                                });
+                                            }//if
 
                                         }
+
+
+
+
 
 
 

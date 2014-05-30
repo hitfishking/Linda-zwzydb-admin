@@ -16,7 +16,7 @@
             "ShuModel",
             "PicModel"
         ],
-        "name": "ExtjsTest01",
+        "name": "Linda_db_admin",
         "stores": [
             "ZhongStore",
             "KeShuTreeStore",

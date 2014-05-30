@@ -72,6 +72,8 @@
             "userConfig": {
                 "fn": "onTreeStoreBeforeLoad",
                 "implHandler": [
+                    "//每次点击，展开树节点，系统会自动发送load()操作，并触发BeforeLoad事件，对于这种自动化引发load()的Component，\r",
+                    "//在BeforeLoad()事件函数中对load()的参数进行设置，是比较自然的。\r",
                     "//将store中当前node中的数据，赋值给operation对象的params属性中，以便向下传递到proxy中。\r",
                     "var node = operation.node;\r",
                     "operation.params.text = node.get('text');\r",

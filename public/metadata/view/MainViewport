@@ -35,20 +35,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|displayName": "rightContainer",
-                "layout|region": "east",
-                "width": 170
-            },
-            "designerId": "43898f77-a6f0-4592-bc94-f725f06cc477"
-        },
-        {
-            "type": "Ext.container.Container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "designer|displayName": "centerContainer",
                 "layout": "border",
                 "layout|region": "center"
@@ -190,7 +176,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "新建",
-                                                        "icon": "pics/new.png",
+                                                        "icon": "icons/new.png",
                                                         "layout|flex": null,
                                                         "text": null,
                                                         "tooltip": "新建"
@@ -306,8 +292,7 @@
                                                                                     "    }\r",
                                                                                     "  );\r",
                                                                                     "} else {\r",
-                                                                                    "  alert(\"请先选择一个科！\");\r",
-                                                                                    "  console.log(\"请先选择一个科！\");\r",
+                                                                                    "  Ext.MessageBox.alert('提示','请先选择一个科！');\r",
                                                                                     "}\r",
                                                                                     "\r",
                                                                                     "\r",
@@ -333,7 +318,7 @@
                                                     "userConfig": {
                                                         "designer|createAlias": "",
                                                         "designer|displayName": "编辑",
-                                                        "icon": "pics/edit.png",
+                                                        "icon": "icons/edit.png",
                                                         "layout|flex": null,
                                                         "text": null,
                                                         "tooltip": "编辑"
@@ -375,7 +360,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "撤销",
-                                                        "icon": "pics/undo.png",
+                                                        "icon": "icons/undo.png",
                                                         "layout|flex": null,
                                                         "text": null,
                                                         "tooltip": "撤销修改"
@@ -417,10 +402,10 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "上传同步",
-                                                        "icon": "pics/commit.png",
+                                                        "icon": "icons/save.png",
                                                         "layout|flex": null,
                                                         "text": null,
-                                                        "tooltip": "提交到服务器"
+                                                        "tooltip": "保存到服务器"
                                                     },
                                                     "configAlternates": {
                                                         "tooltip": "string"
@@ -471,7 +456,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "删除",
-                                                        "icon": "pics/delete.gif",
+                                                        "icon": "icons/delete.gif",
                                                         "itemId": "btnDelete",
                                                         "layout|flex": null,
                                                         "text": null,
@@ -692,7 +677,12 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "layout|flex": null,
-                                                        "text": "进入编辑态"
+                                                        "scale": "medium",
+                                                        "text": "进入编辑态",
+                                                        "tooltip": "切换编辑/保护状态"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
                                                     },
                                                     "designerId": "c32c1098-bff1-420a-8658-a5b11bcfa4e3",
                                                     "cn": [
@@ -753,8 +743,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "icon": "icons/save.png",
                                                         "layout|flex": null,
-                                                        "text": "保存"
+                                                        "text": "保存种",
+                                                        "tooltip": "保存到服务器"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
                                                     },
                                                     "designerId": "0a3397e3-8c4f-4a16-bc40-965723ec3fdb",
                                                     "cn": [
@@ -777,14 +772,13 @@
                                                                     "\r",
                                                                     "\r",
                                                                     "theRecord=theForm.getRecord();\r",
-                                                                    "console.log(theRecord);\r",
                                                                     "\r",
                                                                     "theRecord.store.sync({\r",
-                                                                    "    success: function(rec, op){\r",
-                                                                    "         Ext.MessageBox.alert('成功','保存成功！');\r",
+                                                                    "    success: function(batch, options){\r",
+                                                                    "         Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);\r",
                                                                     "    },\r",
-                                                                    "    failure: function(rec, op){\r",
-                                                                    "         Ext.MessageBox.alert('失败','保存失败！请排除问题后再试！');\r",
+                                                                    "    failure: function(batch, options){\r",
+                                                                    "          Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);\r",
                                                                     "    }\r",
                                                                     "});\r",
                                                                     "\r",
@@ -803,8 +797,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "icon": "icons/delete.gif",
                                                         "layout|flex": null,
-                                                        "text": "删除"
+                                                        "text": "删除种",
+                                                        "tooltip": "删除当前种"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
                                                     },
                                                     "designerId": "68b36671-af0a-4cbc-9786-10d182d91d3a",
                                                     "cn": [
@@ -840,11 +839,12 @@
                                                                     "    if (id == 'yes'){\r",
                                                                     "        Ext.getStore('ZhongStore').remove(theRecord);\r",
                                                                     "        Ext.getStore('ZhongStore').sync({\r",
-                                                                    "            success: function(rec, op){\r",
-                                                                    "                 Ext.MessageBox.alert('成功','删除成功！');\r",
+                                                                    "            success: function(batch, options){\r",
+                                                                    "                 Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);\r",
+                                                                    "                \r",
                                                                     "            },\r",
-                                                                    "            failure: function(rec, op){\r",
-                                                                    "                 Ext.MessageBox.alert('失败','删除失败！请排除问题后再试！');\r",
+                                                                    "            failure: function(batch, options){\r",
+                                                                    "                 Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);\r",
                                                                     "            }\r",
                                                                     "        });\r",
                                                                     "\r",
@@ -866,6 +866,18 @@
                                                     ]
                                                 },
                                                 {
+                                                    "type": "Ext.toolbar.Fill",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null
+                                                    },
+                                                    "designerId": "e2e56555-fabc-4f7a-b889-58d9827bca3d"
+                                                },
+                                                {
                                                     "type": "Ext.button.Button",
                                                     "reference": {
                                                         "name": "items",
@@ -873,8 +885,14 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "icon": "icons/new.png",
                                                         "layout|flex": null,
-                                                        "text": "新建"
+                                                        "scale": "medium",
+                                                        "text": "新建种",
+                                                        "tooltip": "新建一个新种"
+                                                    },
+                                                    "configAlternates": {
+                                                        "tooltip": "string"
                                                     },
                                                     "designerId": "8c1d0296-d763-4a5c-9b35-afdada4d8b28",
                                                     "cn": [
@@ -1513,6 +1531,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "icon": "icons/new.png",
                                                         "layout|flex": null,
                                                         "text": "增加图片"
                                                     },
@@ -1532,7 +1551,7 @@
                                                                 ],
                                                                 "fn": "handler",
                                                                 "implHandler": [
-                                                                    "theWindow = Ext.create('ExtjsTest01.view.winSelectPic');\r",
+                                                                    "theWindow = Ext.create('Linda_db_admin.view.winSelectPic');\r",
                                                                     "theWindow.show();"
                                                                 ]
                                                             },
@@ -1548,19 +1567,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "text": "保存图片"
-                                                    },
-                                                    "designerId": "87e6e914-d6c7-4573-8d6b-1a4db03e5d53"
-                                                },
-                                                {
-                                                    "type": "Ext.button.Button",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
+                                                        "icon": "icons/delete.gif",
                                                         "layout|flex": null,
                                                         "text": "删除图片"
                                                     },
@@ -1580,14 +1587,12 @@
                                                                 ],
                                                                 "fn": "handler",
                                                                 "implHandler": [
-                                                                    "picPanel = this.up('panel[title=\"种图片维护\"]');\r",
-                                                                    "picGrid = picPanel.down('gridpanel');\r",
+                                                                    "picGridPanel = this.up('panel[title=\"种图片维护\"]').down('gridpanel');\r",
+                                                                    "picStore = picGridPanel.getStore();\r",
                                                                     "\r",
-                                                                    "selectedRecord = picGrid.getSelectionModel().getSelection()[0];\r",
-                                                                    "console.log(selectedRecord);\r",
-                                                                    "\r",
+                                                                    "selectedRecord = picGridPanel.getSelectionModel().getSelection()[0];\r",
                                                                     "if (typeof(selectedRecord) == 'undefined') {\r",
-                                                                    "    Ext.MessageBox.alert('提示','请在列表中指定要删除的图片！');\r",
+                                                                    "    Ext.MessageBox.alert('提示','请选择要删除的图片！');\r",
                                                                     "    return;\r",
                                                                     "}\r",
                                                                     "\r",
@@ -1597,17 +1602,30 @@
                                                                     "//handler函数对象内部的自定义函数.\r",
                                                                     "function delconfirm(id){\r",
                                                                     "    if (id == 'yes'){\r",
-                                                                    "        Ext.getStore('PicStore').remove(selectedRecord);\r",
-                                                                    "//         Ext.getStore('ZhongStore').sync({\r",
-                                                                    "//             success: function(rec, op){\r",
-                                                                    "//                  Ext.MessageBox.alert('成功','删除成功！');\r",
-                                                                    "//             },\r",
-                                                                    "//             failure: function(rec, op){\r",
-                                                                    "//                  Ext.MessageBox.alert('失败','删除失败！请排除问题后再试！');\r",
-                                                                    "//             }\r",
-                                                                    "//         });\r",
-                                                                    "\r",
-                                                                    "        return;\r",
+                                                                    "       picStore.remove(selectedRecord);\r",
+                                                                    "        \r",
+                                                                    "       //添加pic_path参数\r",
+                                                                    "       theForm = Ext.ComponentQuery.query('form[title=\"种编辑表单\"]')[0];\r",
+                                                                    "        \r",
+                                                                    "       pic_path = theForm.getRecord().get('pics');\r",
+                                                                    "       if (pic_path === \"\" || typeof(pic_path) == 'undefined'){\r",
+                                                                    "          Ext.MessageBox.alert('错误提示','没有定义该种植物的图片目录，请检查！');\r",
+                                                                    "          return false;\r",
+                                                                    "       } else {\r",
+                                                                    "         \r",
+                                                                    "          picStore.getProxy().setExtraParam('picpath', pic_path);        \r",
+                                                                    "            \r",
+                                                                    "          picStore.sync({\r",
+                                                                    "            success: function(batch, options){\r",
+                                                                    "                Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);\r",
+                                                                    "            },\r",
+                                                                    "            failure: function(batch, options){\r",
+                                                                    "                Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);\r",
+                                                                    "            }\r",
+                                                                    "          });  \r",
+                                                                    "        \r",
+                                                                    "       }\r",
+                                                                    "        \r",
                                                                     "    } else {\r",
                                                                     "        return;\r",
                                                                     "    }\r",
@@ -1658,7 +1676,7 @@
                                                         "flex": 1,
                                                         "height": 0,
                                                         "text": "Pic_path",
-                                                        "width": 235
+                                                        "width": 230
                                                     },
                                                     "designerId": "3d3131a2-f345-4f66-ba42-778b2ce87137",
                                                     "cn": [
@@ -2237,6 +2255,20 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "rightContainer",
+                "layout|region": "east",
+                "width": 170
+            },
+            "designerId": "43898f77-a6f0-4592-bc94-f725f06cc477"
         }
     ]
 }

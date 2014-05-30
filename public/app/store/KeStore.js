@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.store.KeStore', {
+Ext.define('Linda_db_admin.store.KeStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'ExtjsTest01.model.KeModel'
+        'Linda_db_admin.model.KeModel'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +25,7 @@ Ext.define('ExtjsTest01.store.KeStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
-            model: 'ExtjsTest01.model.KeModel',
+            model: 'Linda_db_admin.model.KeModel',
             storeId: 'KeStore'
         }, cfg)]);
     }

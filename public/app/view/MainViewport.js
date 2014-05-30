@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.view.MainViewport', {
+Ext.define('Linda_db_admin.view.MainViewport', {
     extend: 'Ext.container.Viewport',
 
     requires: [
@@ -28,6 +28,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
         'Ext.menu.Item',
         'Ext.grid.plugin.CellEditing',
         'Ext.tree.Column',
+        'Ext.toolbar.Fill',
         'Ext.form.FieldSet',
         'Ext.form.field.ComboBox',
         'Ext.form.field.TextArea',
@@ -47,11 +48,6 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                 {
                     xtype: 'container',
                     region: 'west',
-                    width: 170
-                },
-                {
-                    xtype: 'container',
-                    region: 'east',
                     width: 170
                 },
                 {
@@ -109,7 +105,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                     items: [
                                                         {
                                                             xtype: 'button',
-                                                            icon: 'pics/new.png',
+                                                            icon: 'icons/new.png',
                                                             tooltip: '新建',
                                                             menu: {
                                                                 xtype: 'menu',
@@ -160,8 +156,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                                 }
                                                                                 );
                                                                             } else {
-                                                                                alert("请先选择一个科！");
-                                                                                console.log("请先选择一个科！");
+                                                                                Ext.MessageBox.alert('提示','请先选择一个科！');
                                                                             }
 
 
@@ -180,7 +175,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                 // mytree.fireEvent('beforeedit', this);
 
                                                             },
-                                                            icon: 'pics/edit.png',
+                                                            icon: 'icons/edit.png',
                                                             tooltip: '编辑'
                                                         },
                                                         {
@@ -190,7 +185,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                 mytree.store.load();
 
                                                             },
-                                                            icon: 'pics/undo.png',
+                                                            icon: 'icons/undo.png',
                                                             tooltip: '撤销修改'
                                                         },
                                                         {
@@ -212,8 +207,8 @@ Ext.define('ExtjsTest01.view.MainViewport', {
 
 
                                                             },
-                                                            icon: 'pics/commit.png',
-                                                            tooltip: '提交到服务器'
+                                                            icon: 'icons/save.png',
+                                                            tooltip: '保存到服务器'
                                                         },
                                                         {
                                                             xtype: 'button',
@@ -256,7 +251,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                 }
                                                             },
                                                             itemId: 'btnDelete',
-                                                            icon: 'pics/delete.gif',
+                                                            icon: 'icons/delete.gif',
                                                             tooltip: '删除'
                                                         }
                                                     ]
@@ -338,7 +333,9 @@ Ext.define('ExtjsTest01.view.MainViewport', {
 
 
                                                             },
-                                                            text: '进入编辑态'
+                                                            scale: 'medium',
+                                                            text: '进入编辑态',
+                                                            tooltip: '切换编辑/保护状态'
                                                         },
                                                         {
                                                             xtype: 'button',
@@ -348,20 +345,21 @@ Ext.define('ExtjsTest01.view.MainViewport', {
 
 
                                                                 theRecord=theForm.getRecord();
-                                                                console.log(theRecord);
 
                                                                 theRecord.store.sync({
-                                                                    success: function(rec, op){
-                                                                        Ext.MessageBox.alert('成功','保存成功！');
+                                                                    success: function(batch, options){
+                                                                        Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);
                                                                     },
-                                                                    failure: function(rec, op){
-                                                                        Ext.MessageBox.alert('失败','保存失败！请排除问题后再试！');
+                                                                    failure: function(batch, options){
+                                                                        Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);
                                                                     }
                                                                 });
 
 
                                                             },
-                                                            text: '保存'
+                                                            icon: 'icons/save.png',
+                                                            text: '保存种',
+                                                            tooltip: '保存到服务器'
                                                         },
                                                         {
                                                             xtype: 'button',
@@ -384,11 +382,12 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                     if (id == 'yes'){
                                                                         Ext.getStore('ZhongStore').remove(theRecord);
                                                                         Ext.getStore('ZhongStore').sync({
-                                                                            success: function(rec, op){
-                                                                                Ext.MessageBox.alert('成功','删除成功！');
+                                                                            success: function(batch, options){
+                                                                                Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);
+
                                                                             },
-                                                                            failure: function(rec, op){
-                                                                                Ext.MessageBox.alert('失败','删除失败！请排除问题后再试！');
+                                                                            failure: function(batch, options){
+                                                                                Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);
                                                                             }
                                                                         });
 
@@ -404,7 +403,12 @@ Ext.define('ExtjsTest01.view.MainViewport', {
 
 
                                                             },
-                                                            text: '删除'
+                                                            icon: 'icons/delete.gif',
+                                                            text: '删除种',
+                                                            tooltip: '删除当前种'
+                                                        },
+                                                        {
+                                                            xtype: 'tbfill'
                                                         },
                                                         {
                                                             xtype: 'button',
@@ -442,7 +446,10 @@ Ext.define('ExtjsTest01.view.MainViewport', {
 
 
                                                             },
-                                                            text: '新建'
+                                                            icon: 'icons/new.png',
+                                                            scale: 'medium',
+                                                            text: '新建种',
+                                                            tooltip: '新建一个新种'
                                                         }
                                                     ]
                                                 }
@@ -722,26 +729,21 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                         {
                                                             xtype: 'button',
                                                             handler: function(button, e) {
-                                                                theWindow = Ext.create('ExtjsTest01.view.winSelectPic');
+                                                                theWindow = Ext.create('Linda_db_admin.view.winSelectPic');
                                                                 theWindow.show();
                                                             },
+                                                            icon: 'icons/new.png',
                                                             text: '增加图片'
                                                         },
                                                         {
                                                             xtype: 'button',
-                                                            text: '保存图片'
-                                                        },
-                                                        {
-                                                            xtype: 'button',
                                                             handler: function(button, e) {
-                                                                picPanel = this.up('panel[title="种图片维护"]');
-                                                                picGrid = picPanel.down('gridpanel');
+                                                                picGridPanel = this.up('panel[title="种图片维护"]').down('gridpanel');
+                                                                picStore = picGridPanel.getStore();
 
-                                                                selectedRecord = picGrid.getSelectionModel().getSelection()[0];
-                                                                console.log(selectedRecord);
-
+                                                                selectedRecord = picGridPanel.getSelectionModel().getSelection()[0];
                                                                 if (typeof(selectedRecord) == 'undefined') {
-                                                                    Ext.MessageBox.alert('提示','请在列表中指定要删除的图片！');
+                                                                    Ext.MessageBox.alert('提示','请选择要删除的图片！');
                                                                     return;
                                                                 }
 
@@ -751,17 +753,30 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                 //handler函数对象内部的自定义函数.
                                                                 function delconfirm(id){
                                                                     if (id == 'yes'){
-                                                                        Ext.getStore('PicStore').remove(selectedRecord);
-                                                                        //         Ext.getStore('ZhongStore').sync({
-                                                                        //             success: function(rec, op){
-                                                                        //                  Ext.MessageBox.alert('成功','删除成功！');
-                                                                        //             },
-                                                                        //             failure: function(rec, op){
-                                                                        //                  Ext.MessageBox.alert('失败','删除失败！请排除问题后再试！');
-                                                                        //             }
-                                                                        //         });
+                                                                        picStore.remove(selectedRecord);
 
-                                                                        return;
+                                                                        //添加pic_path参数
+                                                                        theForm = Ext.ComponentQuery.query('form[title="种编辑表单"]')[0];
+
+                                                                        pic_path = theForm.getRecord().get('pics');
+                                                                        if (pic_path === "" || typeof(pic_path) == 'undefined'){
+                                                                            Ext.MessageBox.alert('错误提示','没有定义该种植物的图片目录，请检查！');
+                                                                            return false;
+                                                                        } else {
+
+                                                                            picStore.getProxy().setExtraParam('picpath', pic_path);
+
+                                                                            picStore.sync({
+                                                                                success: function(batch, options){
+                                                                                    Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);
+                                                                                },
+                                                                                failure: function(batch, options){
+                                                                                    Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);
+                                                                                }
+                                                                            });
+
+                                                                        }
+
                                                                     } else {
                                                                         return;
                                                                     }
@@ -770,6 +785,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
 
 
                                                             },
+                                                            icon: 'icons/delete.gif',
                                                             text: '删除图片'
                                                         }
                                                     ]
@@ -791,7 +807,7 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                                                                 return strHtml;
                                                             },
                                                             height: 0,
-                                                            width: 235,
+                                                            width: 230,
                                                             dataIndex: 'pic_path',
                                                             text: 'Pic_path',
                                                             flex: 1
@@ -1005,6 +1021,11 @@ Ext.define('ExtjsTest01.view.MainViewport', {
                             ]
                         }
                     ]
+                },
+                {
+                    xtype: 'container',
+                    region: 'east',
+                    width: 170
                 }
             ]
         });

@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.model.KeShuTreeModel', {
+Ext.define('Linda_db_admin.model.KeShuTreeModel', {
     extend: 'Ext.data.Model',
 
     requires: [

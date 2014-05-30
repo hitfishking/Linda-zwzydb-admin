@@ -41,10 +41,10 @@ Ext.application({
     controllers: [
         'MyController'
     ],
-    name: 'ExtjsTest01',
+    name: 'Linda_db_admin',
 
     launch: function() {
-        Ext.create('ExtjsTest01.view.MainViewport');
+        Ext.create('Linda_db_admin.view.MainViewport');
     }
 
 });

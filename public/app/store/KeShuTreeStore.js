@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.store.KeShuTreeStore', {
+Ext.define('Linda_db_admin.store.KeShuTreeStore', {
     extend: 'Ext.data.TreeStore',
 
     requires: [
-        'ExtjsTest01.model.KeShuTreeModel',
+        'Linda_db_admin.model.KeShuTreeModel',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json'
@@ -28,7 +28,7 @@ Ext.define('ExtjsTest01.store.KeShuTreeStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: false,
-            model: 'ExtjsTest01.model.KeShuTreeModel',
+            model: 'Linda_db_admin.model.KeShuTreeModel',
             storeId: 'KeShuTreeStore',
             proxy: {
                 type: 'ajax',
@@ -57,6 +57,8 @@ Ext.define('ExtjsTest01.store.KeShuTreeStore', {
     },
 
     onTreeStoreBeforeLoad: function(store, operation, eOpts) {
+        //每次点击，展开树节点，系统会自动发送load()操作，并触发BeforeLoad事件，对于这种自动化引发load()的Component，
+        //在BeforeLoad()事件函数中对load()的参数进行设置，是比较自然的。
         //将store中当前node中的数据，赋值给operation对象的params属性中，以便向下传递到proxy中。
         var node = operation.node;
         operation.params.text = node.get('text');

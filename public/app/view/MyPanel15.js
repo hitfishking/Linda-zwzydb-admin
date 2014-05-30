@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.view.MyPanel15', {
+Ext.define('Linda_db_admin.view.MyPanel15', {
     extend: 'Ext.panel.Panel',
 
     requires: [

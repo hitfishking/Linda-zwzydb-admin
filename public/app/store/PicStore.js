@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.store.PicStore', {
+Ext.define('Linda_db_admin.store.PicStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'ExtjsTest01.model.PicModel',
+        'Linda_db_admin.model.PicModel',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json'
     ],
@@ -27,7 +27,7 @@ Ext.define('ExtjsTest01.store.PicStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: false,
-            model: 'ExtjsTest01.model.PicModel',
+            model: 'Linda_db_admin.model.PicModel',
             storeId: 'PicStore',
             proxy: {
                 type: 'ajax',
@@ -43,16 +43,24 @@ Ext.define('ExtjsTest01.store.PicStore', {
                 }
             },
             listeners: {
-                load: {
-                    fn: me.onJsonstoreLoad,
+                beforesync: {
+                    fn: me.onJsonstoreBeforeSync,
                     scope: me
                 }
             }
         }, cfg)]);
     },
 
-    onJsonstoreLoad: function(store, records, successful, eOpts) {
-        console.log(records[0]);
+    onJsonstoreBeforeSync: function(options, eOpts) {
+        //将store中当前node中的数据，赋值给operation对象的params属性中，以便向下传递到proxy中。
+        // var node = operation.node;
+        // operation.params.text = node.get('text');
+        // operation.params.leaf = node.get('leaf');
+        // operation.params.expanded = node.get('expanded');
+        // operation.params.id = node.get('id');
+        // operation.params.ntype = node.get('ntype');
+
+        console.log(options);
 
     }
 

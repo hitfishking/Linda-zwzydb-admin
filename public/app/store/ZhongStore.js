@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.store.ZhongStore', {
+Ext.define('Linda_db_admin.store.ZhongStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'ExtjsTest01.model.ZhongModel',
+        'Linda_db_admin.model.ZhongModel',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json'
     ],
@@ -27,7 +27,7 @@ Ext.define('ExtjsTest01.store.ZhongStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: false,
-            model: 'ExtjsTest01.model.ZhongModel',
+            model: 'Linda_db_admin.model.ZhongModel',
             storeId: 'ZhongStore',
             proxy: {
                 type: 'ajax',

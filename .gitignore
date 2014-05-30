@@ -18,6 +18,7 @@
 /config/database_todel.yml
 /config/secrets.yml
 /public -*
+/public/upfiles
 .idea/*
 
 

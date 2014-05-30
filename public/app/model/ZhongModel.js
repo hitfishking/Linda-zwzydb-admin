@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.model.ZhongModel', {
+Ext.define('Linda_db_admin.model.ZhongModel', {
     extend: 'Ext.data.Model',
 
     requires: [

@@ -13,6 +13,6 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.controller.MyController', {
+Ext.define('Linda_db_admin.controller.MyController', {
     extend: 'Ext.app.Controller'
 });

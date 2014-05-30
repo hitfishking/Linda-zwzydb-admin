@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('ExtjsTest01.model.ShuModel', {
+Ext.define('Linda_db_admin.model.ShuModel', {
     extend: 'Ext.data.Model',
 
     requires: [
