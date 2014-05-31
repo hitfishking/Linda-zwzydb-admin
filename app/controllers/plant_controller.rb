@@ -20,6 +20,11 @@ class PlantController < ApplicationController
 
 	end
 
+	def index
+		#render :file => 'public/index.html' and return
+	end
+
+
 	# 双击tree上种节点，启动store的load操作...
 	# 用作Zhong form的后台支撑store.
 	def zhong_query

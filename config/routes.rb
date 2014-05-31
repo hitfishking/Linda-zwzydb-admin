@@ -1,5 +1,8 @@
 Test01Proj::Application.routes.draw do
 
+  #get "plant/index"
+	match '/', to: 'plant#index', via: [:get, :post]
+
   get "plant/query_keshu"
   post "plant/query_keshu"
   get "plant/update_keshu"
