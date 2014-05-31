@@ -1786,6 +1786,9 @@
                                                         "type": "object"
                                                     },
                                                     "codeClass": null,
+                                                    "userConfig": {
+                                                        "width": 190
+                                                    },
                                                     "designerId": "7810f1c6-96e1-4126-a49a-dc68434cbb2c"
                                                 },
                                                 {
@@ -1800,7 +1803,7 @@
                                                         "flex": 1,
                                                         "height": 0,
                                                         "text": "Pic_path",
-                                                        "width": 230
+                                                        "width": 190
                                                     },
                                                     "designerId": "3d3131a2-f345-4f66-ba42-778b2ce87137",
                                                     "cn": [

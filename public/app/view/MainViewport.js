@@ -907,6 +907,9 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                     xtype: 'gridpanel',
                                                     flex: 1,
                                                     store: 'PicStore',
+                                                    viewConfig: {
+                                                        width: 190
+                                                    },
                                                     columns: [
                                                         {
                                                             xtype: 'gridcolumn',
@@ -918,7 +921,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                                 return strHtml;
                                                             },
                                                             height: 0,
-                                                            width: 230,
+                                                            width: 190,
                                                             dataIndex: 'pic_path',
                                                             text: 'Pic_path',
                                                             flex: 1
