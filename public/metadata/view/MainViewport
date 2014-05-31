@@ -770,6 +770,11 @@
                                                                     "theForm = this.up('form[title=\"种编辑表单\"]');\r",
                                                                     "theForm.updateRecord();\r",
                                                                     "\r",
+                                                                    "// if (!theForm.isValid()) {\r",
+                                                                    "//    alert('Have invalid values.');\r",
+                                                                    "//     return;\r",
+                                                                    "// }\r",
+                                                                    "\r",
                                                                     "\r",
                                                                     "theRecord=theForm.getRecord();\r",
                                                                     "\r",
@@ -972,6 +977,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "designer|displayName": "KeCombo",
                                                         "displayField": "name",
                                                         "editable": false,
@@ -999,17 +1005,15 @@
                                                             "userConfig": {
                                                                 "fn": "onKecomboSelect",
                                                                 "implHandler": [
-                                                                    "// alert(combo.value);\r",
-                                                                    "\r",
-                                                                    "theForm = this.down('form[itemId=\"formZhong\"]'); console.log(theForm);\r",
-                                                                    "theShuCombo = theForm.down('combobox[itemId=\"shucombo\"]'); console.log(theShuCombo);\r",
+                                                                    "theForm = this.down('form[itemId=\"formZhong\"]');  //this是整个viewport\r",
+                                                                    "theShuCombo = theForm.down('combobox[itemId=\"shucombo\"]'); \r",
                                                                     "\r",
                                                                     "selectedKeId = records[0].data._id;\r",
                                                                     "\r",
                                                                     "theShuCombo.store.clearFilter(true);\r",
                                                                     "theShuCombo.store.filter(\"ke_id\",selectedKeId);\r",
                                                                     "// theShuCombo.rawValue = '';\r",
-                                                                    "theShuCombo.clearValue();\r",
+                                                                    "theShuCombo.clearValue();  //清空显示，以便让用户重新选择.\r",
                                                                     "\r",
                                                                     "console.log(records[0]);\r",
                                                                     "\r",
@@ -1031,6 +1035,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "designer|displayName": "ShuCombo",
                                                         "displayField": "name",
                                                         "editable": false,
@@ -1057,6 +1062,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "种名称",
                                                 "labelWidth": 50,
                                                 "layout|anchor": "100%",
@@ -1072,6 +1078,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "拉丁名",
                                                 "labelWidth": 50,
                                                 "layout|anchor": "100%",
@@ -1095,49 +1102,113 @@
                                             "designerId": "ddaa57cf-40cc-49ae-8ba8-c7562b6a1b32"
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.ComboBox",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
+                                                "editable": false,
                                                 "fieldLabel": "形态",
+                                                "formBind": false,
                                                 "labelWidth": 50,
                                                 "layout|anchor": "100%",
-                                                "name": "xingtai"
+                                                "name": "xingtai",
+                                                "queryMode": "local",
+                                                "store": [
+                                                    "['乔木','落叶大乔木','落叶小乔木','常绿乔木','灌木','藤本','宿根','水生','草本','草坪','地被']"
+                                                ]
                                             },
-                                            "designerId": "14ce3e1c-6a9d-4556-94e4-18f48c73ea6f"
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "0ec1a4cb-5a80-4e66-b2eb-1c4b884752b3",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onComboboxSelect",
+                                                        "implHandler": [
+                                                            "xingtai = records[0].get('field1');\r",
+                                                            "\r",
+                                                            "theForm = combo.up('form[title=\"种编辑表单\"]').getForm();\r",
+                                                            "cname = theForm.findField('cname').getValue();\r",
+                                                            "\r",
+                                                            "if ((typeof(cname) == 'undefined') || (cname === \"\")) {\r",
+                                                            "   Ext.MessageBox.alert('提示','种名称为空! 请先指定种名称!');\r",
+                                                            "   return;\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "theForm.findField('pics').setValue(xingtai +'/'+ cname + '/' );\r",
+                                                            "\r",
+                                                            "\r",
+                                                            "\r",
+                                                            "\r",
+                                                            ""
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "8316e4e1-5dc2-4046-b75f-af678658ce14"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.ComboBox",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "fieldLabel": "功能",
-                                                "labelWidth": 50,
+                                                "allowBlank": false,
+                                                "editable": false,
+                                                "fieldLabel": "功能性状",
+                                                "labelWidth": 60,
                                                 "layout|anchor": "100%",
-                                                "name": "gongneng"
+                                                "multiSelect": true,
+                                                "name": "gongneng",
+                                                "store": [
+                                                    "['耐阴','耐寒','耐旱','耐水湿','耐盐碱','耐修剪','抗风','抗病虫害','抗污染']"
+                                                ]
                                             },
-                                            "designerId": "364f8dcf-fe8b-492e-958e-8f8380a2aa59"
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "ddaea458-01e0-48ef-b71d-cf66be492527"
                                         },
                                         {
-                                            "type": "Ext.form.field.Text",
+                                            "type": "Ext.form.field.ComboBox",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
+                                                "editable": false,
                                                 "fieldLabel": "观赏",
+                                                "forceSelection": true,
                                                 "labelWidth": 50,
                                                 "layout|anchor": "100%",
-                                                "name": "guanshang"
+                                                "multiSelect": true,
+                                                "name": "guanshang",
+                                                "queryMode": "local",
+                                                "store": [
+                                                    "['观花','观叶','观果','观枝','观皮']"
+                                                ]
                                             },
-                                            "designerId": "2c6ae422-48e3-47fb-84b4-a1116fab2295"
+                                            "configAlternates": {
+                                                "store": "array"
+                                            },
+                                            "designerId": "7d0b43f6-f47a-41c8-80ae-f774fd29c84f"
                                         },
                                         {
                                             "type": "Ext.form.field.Text",
@@ -1147,6 +1218,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
                                                 "fieldLabel": "花期",
                                                 "labelWidth": 50,
                                                 "layout|anchor": "100%",
@@ -1162,10 +1234,15 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "allowBlank": false,
+                                                "cls": "readonly_text",
                                                 "fieldLabel": "图片地址",
                                                 "labelWidth": 60,
                                                 "layout|anchor": "100%",
-                                                "name": "pics"
+                                                "name": "pics",
+                                                "overCls": "readonly_text",
+                                                "readOnly": true,
+                                                "readOnlyCls": "readonly_text"
                                             },
                                             "designerId": "3c621f01-3d98-4bf9-98c1-cd4e3389f7b9"
                                         },
@@ -1177,6 +1254,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "border": 3,
+                                                "collapsible": true,
                                                 "layout|anchor": null,
                                                 "title": "生态数据"
                                             },
@@ -1190,6 +1269,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "根系",
                                                         "labelWidth": 50,
                                                         "layout|anchor": "100%",
@@ -1198,50 +1278,70 @@
                                                     "designerId": "339fcf3e-a266-42e5-ac75-dcce5d866db7"
                                                 },
                                                 {
-                                                    "type": "Ext.form.field.Text",
+                                                    "type": "Ext.form.field.ComboBox",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "空气湿度",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
                                                         "name": "shengtai.huminity",
-                                                        "width": 459
+                                                        "store": [
+                                                            "['高湿(100%~85%)','中湿(85%~60%)','较干(60%~30%)','干燥(30%~0%)']"
+                                                        ]
                                                     },
-                                                    "designerId": "da06fb03-01ff-48c9-b6ac-9109070ea10d"
+                                                    "configAlternates": {
+                                                        "store": "array"
+                                                    },
+                                                    "designerId": "41ea968d-18a7-4b98-8eaa-a3ab5c413b17"
                                                 },
                                                 {
-                                                    "type": "Ext.form.field.Text",
+                                                    "type": "Ext.form.field.ComboBox",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "光照强度",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
-                                                        "name": "shengtai.light"
+                                                        "name": "shengtai.light",
+                                                        "store": [
+                                                            "['全光','全光50%','全光30%','散射光','弱光']"
+                                                        ]
                                                     },
-                                                    "designerId": "6a951726-a832-4295-83d1-f36879a2f3fc"
+                                                    "configAlternates": {
+                                                        "store": "array"
+                                                    },
+                                                    "designerId": "0ddd37cb-5bfa-4120-9800-ef249a2fcfaf"
                                                 },
                                                 {
-                                                    "type": "Ext.form.field.Text",
+                                                    "type": "Ext.form.field.ComboBox",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "土壤湿度",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
-                                                        "name": "shengtai.moisture"
+                                                        "name": "shengtai.moisture",
+                                                        "store": [
+                                                            "['耐涝','中等水分','耐干旱']"
+                                                        ]
                                                     },
-                                                    "designerId": "63538bd3-f750-44d0-b56a-a9b6160813c1"
+                                                    "configAlternates": {
+                                                        "store": "array"
+                                                    },
+                                                    "designerId": "4852d02c-9aa9-4863-9d28-e3e5c0cfe84a"
                                                 },
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -1251,6 +1351,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "栽植难易性",
                                                         "labelWidth": 70,
                                                         "layout|anchor": "100%",
@@ -1266,6 +1367,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "耐盐碱性",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1281,6 +1383,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "寿命",
                                                         "labelWidth": 50,
                                                         "layout|anchor": "100%",
@@ -1296,6 +1399,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "土壤",
                                                         "labelWidth": 50,
                                                         "layout|anchor": "100%",
@@ -1304,19 +1408,27 @@
                                                     "designerId": "14739d90-338a-439f-b352-d47d37962b09"
                                                 },
                                                 {
-                                                    "type": "Ext.form.field.Text",
+                                                    "type": "Ext.form.field.ComboBox",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
+                                                        "editable": false,
                                                         "fieldLabel": "生长速度",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
-                                                        "name": "shengtai.sudu"
+                                                        "name": "shengtai.sudu",
+                                                        "store": [
+                                                            "['很快','较快','中等速度','缓慢']"
+                                                        ]
                                                     },
-                                                    "designerId": "639b4d0c-fd49-4d9e-b87b-8cc0d195b744"
+                                                    "configAlternates": {
+                                                        "store": "array"
+                                                    },
+                                                    "designerId": "5282e97f-fa0d-4ec2-9ba9-f067745a2bcc"
                                                 },
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -1326,6 +1438,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "适宜温度",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1343,6 +1456,8 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "border": 3,
+                                                "collapsible": true,
                                                 "layout|anchor": "100%",
                                                 "title": "工程数据",
                                                 "width": 150
@@ -1357,6 +1472,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "自然区域",
                                                         "height": 74,
                                                         "labelWidth": 60,
@@ -1373,6 +1489,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "应用区域",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1388,6 +1505,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "识别特征",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1403,6 +1521,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "种植密度",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1418,6 +1537,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "苗木规格",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1434,6 +1554,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "设计建议",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1449,6 +1570,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "施工要点",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1464,6 +1586,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "养护要点",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1479,6 +1602,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "allowBlank": false,
                                                         "fieldLabel": "参考价格",
                                                         "labelWidth": 60,
                                                         "layout|anchor": "100%",
@@ -1737,13 +1861,13 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "bodyBorder": false,
-                                        "collapsed": true,
+                                        "collapsed": false,
                                         "collapsible": true,
                                         "designer|displayName": "hideGrid",
                                         "layout": "border",
                                         "layout|region": "west",
                                         "title": "My Panel",
-                                        "width": 300
+                                        "width": 0
                                     },
                                     "designerId": "db2643e4-6a36-4436-a935-1bd47bd1c1a2",
                                     "cn": [

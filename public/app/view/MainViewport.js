@@ -343,6 +343,11 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                                 theForm = this.up('form[title="种编辑表单"]');
                                                                 theForm.updateRecord();
 
+                                                                // if (!theForm.isValid()) {
+                                                                //    alert('Have invalid values.');
+                                                                //     return;
+                                                                // }
+
 
                                                                 theRecord=theForm.getRecord();
 
@@ -468,6 +473,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                             fieldLabel: '科名',
                                                             labelWidth: 40,
                                                             name: 'ke_id',
+                                                            allowBlank: false,
                                                             emptyText: '请选择一个科',
                                                             editable: false,
                                                             displayField: 'name',
@@ -489,6 +495,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                             fieldLabel: '属名',
                                                             labelWidth: 40,
                                                             name: 'shu_id2',
+                                                            allowBlank: false,
                                                             emptyText: '请选择一个属',
                                                             editable: false,
                                                             displayField: 'name',
@@ -504,14 +511,16 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                     anchor: '100%',
                                                     fieldLabel: '种名称',
                                                     labelWidth: 50,
-                                                    name: 'cname'
+                                                    name: 'cname',
+                                                    allowBlank: false
                                                 },
                                                 {
                                                     xtype: 'textfield',
                                                     anchor: '100%',
                                                     fieldLabel: '拉丁名',
                                                     labelWidth: 50,
-                                                    name: 'ldname'
+                                                    name: 'ldname',
+                                                    allowBlank: false
                                                 },
                                                 {
                                                     xtype: 'textfield',
@@ -521,42 +530,99 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                     name: 'aliases'
                                                 },
                                                 {
-                                                    xtype: 'textfield',
+                                                    xtype: 'combobox',
                                                     anchor: '100%',
+                                                    formBind: false,
                                                     fieldLabel: '形态',
                                                     labelWidth: 50,
-                                                    name: 'xingtai'
+                                                    name: 'xingtai',
+                                                    allowBlank: false,
+                                                    editable: false,
+                                                    queryMode: 'local',
+                                                    store: [
+                                                        '乔木',
+                                                        '落叶大乔木',
+                                                        '落叶小乔木',
+                                                        '常绿乔木',
+                                                        '灌木',
+                                                        '藤本',
+                                                        '宿根',
+                                                        '水生',
+                                                        '草本',
+                                                        '草坪',
+                                                        '地被'
+                                                    ],
+                                                    listeners: {
+                                                        select: {
+                                                            fn: me.onComboboxSelect,
+                                                            scope: me
+                                                        }
+                                                    }
                                                 },
                                                 {
-                                                    xtype: 'textfield',
+                                                    xtype: 'combobox',
                                                     anchor: '100%',
-                                                    fieldLabel: '功能',
-                                                    labelWidth: 50,
-                                                    name: 'gongneng'
+                                                    fieldLabel: '功能性状',
+                                                    labelWidth: 60,
+                                                    name: 'gongneng',
+                                                    allowBlank: false,
+                                                    editable: false,
+                                                    multiSelect: true,
+                                                    store: [
+                                                        '耐阴',
+                                                        '耐寒',
+                                                        '耐旱',
+                                                        '耐水湿',
+                                                        '耐盐碱',
+                                                        '耐修剪',
+                                                        '抗风',
+                                                        '抗病虫害',
+                                                        '抗污染'
+                                                    ]
                                                 },
                                                 {
-                                                    xtype: 'textfield',
+                                                    xtype: 'combobox',
                                                     anchor: '100%',
                                                     fieldLabel: '观赏',
                                                     labelWidth: 50,
-                                                    name: 'guanshang'
+                                                    name: 'guanshang',
+                                                    allowBlank: false,
+                                                    editable: false,
+                                                    forceSelection: true,
+                                                    multiSelect: true,
+                                                    queryMode: 'local',
+                                                    store: [
+                                                        '观花',
+                                                        '观叶',
+                                                        '观果',
+                                                        '观枝',
+                                                        '观皮'
+                                                    ]
                                                 },
                                                 {
                                                     xtype: 'textfield',
                                                     anchor: '100%',
                                                     fieldLabel: '花期',
                                                     labelWidth: 50,
-                                                    name: 'huaqi'
+                                                    name: 'huaqi',
+                                                    allowBlank: false
                                                 },
                                                 {
                                                     xtype: 'textfield',
                                                     anchor: '100%',
+                                                    cls: 'readonly_text',
+                                                    overCls: 'readonly_text',
                                                     fieldLabel: '图片地址',
                                                     labelWidth: 60,
-                                                    name: 'pics'
+                                                    name: 'pics',
+                                                    readOnly: true,
+                                                    readOnlyCls: 'readonly_text',
+                                                    allowBlank: false
                                                 },
                                                 {
                                                     xtype: 'fieldset',
+                                                    border: 3,
+                                                    collapsible: true,
                                                     title: '生态数据',
                                                     items: [
                                                         {
@@ -564,78 +630,114 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                             anchor: '100%',
                                                             fieldLabel: '根系',
                                                             labelWidth: 50,
-                                                            name: 'shengtai.genxi'
+                                                            name: 'shengtai.genxi',
+                                                            allowBlank: false
                                                         },
                                                         {
-                                                            xtype: 'textfield',
+                                                            xtype: 'combobox',
                                                             anchor: '100%',
-                                                            width: 459,
                                                             fieldLabel: '空气湿度',
                                                             labelWidth: 60,
-                                                            name: 'shengtai.huminity'
+                                                            name: 'shengtai.huminity',
+                                                            allowBlank: false,
+                                                            store: [
+                                                                '高湿(100%~85%)',
+                                                                '中湿(85%~60%)',
+                                                                '较干(60%~30%)',
+                                                                '干燥(30%~0%)'
+                                                            ]
                                                         },
                                                         {
-                                                            xtype: 'textfield',
+                                                            xtype: 'combobox',
                                                             anchor: '100%',
                                                             fieldLabel: '光照强度',
                                                             labelWidth: 60,
-                                                            name: 'shengtai.light'
+                                                            name: 'shengtai.light',
+                                                            allowBlank: false,
+                                                            store: [
+                                                                '全光',
+                                                                '全光50%',
+                                                                '全光30%',
+                                                                '散射光',
+                                                                '弱光'
+                                                            ]
                                                         },
                                                         {
-                                                            xtype: 'textfield',
+                                                            xtype: 'combobox',
                                                             anchor: '100%',
                                                             fieldLabel: '土壤湿度',
                                                             labelWidth: 60,
-                                                            name: 'shengtai.moisture'
+                                                            name: 'shengtai.moisture',
+                                                            allowBlank: false,
+                                                            store: [
+                                                                '耐涝',
+                                                                '中等水分',
+                                                                '耐干旱'
+                                                            ]
                                                         },
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '100%',
                                                             fieldLabel: '栽植难易性',
                                                             labelWidth: 70,
-                                                            name: 'shengtai.nanyi'
+                                                            name: 'shengtai.nanyi',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '100%',
                                                             fieldLabel: '耐盐碱性',
                                                             labelWidth: 60,
-                                                            name: 'shengtai.salt'
+                                                            name: 'shengtai.salt',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '100%',
                                                             fieldLabel: '寿命',
                                                             labelWidth: 50,
-                                                            name: 'shengtai.shouming'
+                                                            name: 'shengtai.shouming',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '100%',
                                                             fieldLabel: '土壤',
                                                             labelWidth: 50,
-                                                            name: 'shengtai.soil'
+                                                            name: 'shengtai.soil',
+                                                            allowBlank: false
                                                         },
                                                         {
-                                                            xtype: 'textfield',
+                                                            xtype: 'combobox',
                                                             anchor: '100%',
                                                             fieldLabel: '生长速度',
                                                             labelWidth: 60,
-                                                            name: 'shengtai.sudu'
+                                                            name: 'shengtai.sudu',
+                                                            allowBlank: false,
+                                                            editable: false,
+                                                            store: [
+                                                                '很快',
+                                                                '较快',
+                                                                '中等速度',
+                                                                '缓慢'
+                                                            ]
                                                         },
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '100%',
                                                             fieldLabel: '适宜温度',
                                                             labelWidth: 60,
-                                                            name: 'shengtai.temperature'
+                                                            name: 'shengtai.temperature',
+                                                            allowBlank: false
                                                         }
                                                     ]
                                                 },
                                                 {
                                                     xtype: 'fieldset',
                                                     anchor: '100%',
+                                                    border: 3,
                                                     width: 150,
+                                                    collapsible: true,
                                                     title: '工程数据',
                                                     items: [
                                                         {
@@ -644,28 +746,32 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                             height: 74,
                                                             fieldLabel: '自然区域',
                                                             labelWidth: 60,
-                                                            name: 'engineering.ziran_quyu'
+                                                            name: 'engineering.ziran_quyu',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '100%',
                                                             fieldLabel: '应用区域',
                                                             labelWidth: 60,
-                                                            name: 'engineering.yingyong_quyu'
+                                                            name: 'engineering.yingyong_quyu',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '100%',
                                                             fieldLabel: '识别特征',
                                                             labelWidth: 60,
-                                                            name: 'engineering.shibie_tezheng'
+                                                            name: 'engineering.shibie_tezheng',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '100%',
                                                             fieldLabel: '种植密度',
                                                             labelWidth: 60,
-                                                            name: 'engineering.zhongzhi_midu'
+                                                            name: 'engineering.zhongzhi_midu',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textfield',
@@ -673,35 +779,40 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                             width: 150,
                                                             fieldLabel: '苗木规格',
                                                             labelWidth: 60,
-                                                            name: 'engineering.miaomu_guige'
+                                                            name: 'engineering.miaomu_guige',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '100%',
                                                             fieldLabel: '设计建议',
                                                             labelWidth: 60,
-                                                            name: 'engineering.sheji_jianyi'
+                                                            name: 'engineering.sheji_jianyi',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '100%',
                                                             fieldLabel: '施工要点',
                                                             labelWidth: 60,
-                                                            name: 'engineering.shigong_yaodian'
+                                                            name: 'engineering.shigong_yaodian',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textareafield',
                                                             anchor: '100%',
                                                             fieldLabel: '养护要点',
                                                             labelWidth: 60,
-                                                            name: 'engineering.yanghu_yaodian'
+                                                            name: 'engineering.yanghu_yaodian',
+                                                            allowBlank: false
                                                         },
                                                         {
                                                             xtype: 'textfield',
                                                             anchor: '100%',
                                                             fieldLabel: '参考价格',
                                                             labelWidth: 60,
-                                                            name: 'engineering.cankao_jiage'
+                                                            name: 'engineering.cankao_jiage',
+                                                            allowBlank: false
                                                         }
                                                     ]
                                                 }
@@ -825,10 +936,10 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                         {
                                             xtype: 'panel',
                                             region: 'west',
-                                            width: 300,
+                                            width: 0,
                                             layout: 'border',
                                             bodyBorder: false,
-                                            collapsed: true,
+                                            collapsed: false,
                                             collapsible: true,
                                             title: 'My Panel',
                                             items: [
@@ -1069,19 +1180,36 @@ Ext.define('Linda_db_admin.view.MainViewport', {
     },
 
     onKecomboSelect: function(combo, records, eOpts) {
-        // alert(combo.value);
-
-        theForm = this.down('form[itemId="formZhong"]'); console.log(theForm);
-        theShuCombo = theForm.down('combobox[itemId="shucombo"]'); console.log(theShuCombo);
+        theForm = this.down('form[itemId="formZhong"]');  //this是整个viewport
+        theShuCombo = theForm.down('combobox[itemId="shucombo"]');
 
         selectedKeId = records[0].data._id;
 
         theShuCombo.store.clearFilter(true);
         theShuCombo.store.filter("ke_id",selectedKeId);
         // theShuCombo.rawValue = '';
-        theShuCombo.clearValue();
+        theShuCombo.clearValue();  //清空显示，以便让用户重新选择.
 
         console.log(records[0]);
+
+
+
+    },
+
+    onComboboxSelect: function(combo, records, eOpts) {
+        xingtai = records[0].get('field1');
+
+        theForm = combo.up('form[title="种编辑表单"]').getForm();
+        cname = theForm.findField('cname').getValue();
+
+        if ((typeof(cname) == 'undefined') || (cname === "")) {
+           Ext.MessageBox.alert('提示','种名称为空! 请先指定种名称!');
+           return;
+        }
+
+        theForm.findField('pics').setValue(xingtai +'/'+ cname + '/' );
+
+
 
 
 
