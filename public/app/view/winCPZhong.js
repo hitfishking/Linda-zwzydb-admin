@@ -45,6 +45,7 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'ke_id',
                             text: 'Ke_id'
                         },
@@ -55,6 +56,7 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'shu_id2',
                             text: 'Shu_id2'
                         },
@@ -65,6 +67,7 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            hidden: true,
                             dataIndex: 'zhong_id',
                             text: 'Zhong_id'
                         },

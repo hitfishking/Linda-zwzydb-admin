@@ -49,6 +49,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "ke_id",
+                        "hidden": true,
                         "text": "Ke_id"
                     },
                     "designerId": "e56f14c0-43d7-4007-87ea-8cd8631353b6"
@@ -75,6 +76,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "shu_id2",
+                        "hidden": true,
                         "text": "Shu_id2"
                     },
                     "designerId": "7b87a4ec-9c02-4aaa-9bb2-5a23a40f4ff3"
@@ -101,6 +103,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "zhong_id",
+                        "hidden": true,
                         "text": "Zhong_id"
                     },
                     "designerId": "6c1d48bc-ed42-48e4-b486-c64ee3f7dfae"
