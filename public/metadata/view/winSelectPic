@@ -1,0 +1,147 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|userClassName": "winSelectPic",
+        "height": 165,
+        "id": "mywin1_id",
+        "itemId": "mywin1",
+        "layout": "fit",
+        "title": "选择图片",
+        "width": 457
+    },
+    "designerId": "b1fd9a31-bf3a-4e6a-beef-647f563f4517",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "height": 166,
+                "title": null,
+                "url": "plant/pics_upload"
+            },
+            "designerId": "17d749a0-c9f8-44b8-a7a0-f71a4faf72e3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "buttonText": "选择图片...",
+                        "emptyText": "请选择图片文件",
+                        "fieldLabel": "图片名",
+                        "formBind": false,
+                        "labelWidth": 50,
+                        "layout|anchor": "100%",
+                        "name": "upfile"
+                    },
+                    "designerId": "7b0017bf-0e76-4b15-906a-5a3587ad5fb6"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "16fd6bb5-8948-45da-8648-796c71fa0917",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "上传图片"
+                            },
+                            "designerId": "67f1c6da-0c9c-4e6d-88ff-3590f6e5e1d9",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "theForm = Ext.ComponentQuery.query('form[title=\"种编辑表单\"]')[0];\r",
+                                            "theRecord = theForm.getRecord();\r",
+                                            "pic_path = theRecord.get('pics');\r",
+                                            "zhongId = theRecord.get('zhong_id');\r",
+                                            "\r",
+                                            "if (pic_path === \"\" || typeof(pic_path) == 'undefined'){\r",
+                                            "  Ext.MessageBox.alert('错误提示','没有定义该种植物的图片目录，请检查！');\r",
+                                            "  return false;\r",
+                                            "} else {\r",
+                                            "\r",
+                                            "  var form = this.up('form').getForm();\r",
+                                            "\r",
+                                            "  if(form.isValid()){\r",
+                                            "\r",
+                                            "    form.submit({\r",
+                                            "        url: 'plant/pics_upload',\r",
+                                            "        params: {                         //form.commit()附加参数，upload图片的同时给定目标目录.\r",
+                                            "            picpath: pic_path\r",
+                                            "        },\r",
+                                            "        waitMsg: '正在上传图片...',\r",
+                                            "        success: function(form,action) {\r",
+                                            "            Ext.Msg.alert('成功', action.result.message);            \r",
+                                            "            Ext.getStore('PicStore').load({\r",
+                                            "              params: {\r",
+                                            "                  id: theRecord.get(zhongId)\r",
+                                            "              }\r",
+                                            "           });                   \r",
+                                            "        },\r",
+                                            "        failure: function(form,action) {\r",
+                                            "            Ext.Msg.alert('失败', action.result.message);\r",
+                                            "        \r",
+                                            "        }\r",
+                                            "    });\r",
+                                            "  }//if\r",
+                                            "\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "17673023-1bb3-4640-8454-410aac8e4d76"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

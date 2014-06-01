@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "ZhongModel",
+            "KeShuTreeModel",
+            "KeModel",
+            "ShuModel",
+            "PicModel"
+        ],
+        "name": "Linda_db_admin",
+        "stores": [
+            "ZhongStore",
+            "KeShuTreeStore",
+            "KeStore",
+            "ShuStore",
+            "PicStore",
+            "ZhongStoreLocal"
+        ],
+        "views": [
+            "winSelectPic",
+            "MyPanel15",
+            "winCPZhong"
+        ]
+    },
+    "designerId": "application"
+}

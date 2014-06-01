@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css",
+        "url": "resources/css/linda-zwzydb.css"
+    },
+    "designerId": "601ca8b1-4e86-40fd-8447-50200e17d254"
+}

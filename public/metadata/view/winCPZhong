@@ -1,0 +1,639 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "winCPZhong",
+        "height": 323,
+        "layout": "fit",
+        "title": "Copy/Paste种信息",
+        "width": 571
+    },
+    "designerId": "624cd5e6-2468-4dcd-962e-78d85136072f",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 193,
+                "store": "ZhongStoreLocal",
+                "title": null
+            },
+            "designerId": "1890ebc8-da18-40f2-bd4f-a5e195b0efb8",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "winCPZhongView"
+                    },
+                    "designerId": "02b9fcc3-3a79-4be3-a327-a59a1f9a1eac"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ke_id",
+                        "text": "Ke_id"
+                    },
+                    "designerId": "e56f14c0-43d7-4007-87ea-8cd8631353b6"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ke_name",
+                        "text": "Ke_name"
+                    },
+                    "designerId": "b3dcc728-2ffe-40d0-ae0a-6822bbb70bb1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shu_id2",
+                        "text": "Shu_id2"
+                    },
+                    "designerId": "7b87a4ec-9c02-4aaa-9bb2-5a23a40f4ff3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shu_name",
+                        "text": "Shu_name"
+                    },
+                    "designerId": "37150c75-8958-4c2d-a2ad-62c53a194104"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "zhong_id",
+                        "text": "Zhong_id"
+                    },
+                    "designerId": "6c1d48bc-ed42-48e4-b486-c64ee3f7dfae"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "cname",
+                        "text": "Cname"
+                    },
+                    "designerId": "3efdcc7e-04d4-45f2-ae6a-9bfcdde8fea7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ldname",
+                        "text": "Ldname"
+                    },
+                    "designerId": "758ad4a7-00bb-4628-b30d-8d9656d8fde3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "aliases",
+                        "text": "Aliases"
+                    },
+                    "designerId": "0ba10b2d-b4c3-4de5-bbff-06d02e4d98ae"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "xingtai",
+                        "text": "Xingtai"
+                    },
+                    "designerId": "b32cfbed-2883-46da-a8f8-15e0c3288d4c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gongneng",
+                        "text": "Gongneng"
+                    },
+                    "designerId": "a3ac818d-41eb-4b2c-b92d-103a1a0c82e1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "guanshang",
+                        "text": "Guanshang"
+                    },
+                    "designerId": "d8443f6b-530e-4e8e-a494-ee53e4495d2e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "huaqi",
+                        "text": "Huaqi"
+                    },
+                    "designerId": "a77576f3-130a-467c-87ac-6215d688371b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "pics",
+                        "text": "Pics"
+                    },
+                    "designerId": "a6249cd4-c2eb-4314-82b2-a0ad289080de"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "pic_count",
+                        "text": "Pic_count"
+                    },
+                    "designerId": "a6b1e87f-edd0-4ac8-a815-0872a16657da"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.genxi",
+                        "text": "Shengtai.genxi"
+                    },
+                    "designerId": "cf2e15b0-56d6-453d-8aad-c68c7bf8d7ea"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.huminity",
+                        "text": "Shengtai.huminity"
+                    },
+                    "designerId": "190fa542-0c54-4c88-82e6-90b19c5b0a4c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.light",
+                        "text": "Shengtai.light"
+                    },
+                    "designerId": "e7b2de69-507c-42eb-a1fc-6d9668273126"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.moisture",
+                        "text": "Shengtai.moisture"
+                    },
+                    "designerId": "02ccc7ef-de0d-4f69-bea5-7aa25a33ef8e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.nanyi",
+                        "text": "Shengtai.nanyi"
+                    },
+                    "designerId": "f153f926-a9bb-4908-adc6-b443999bd031"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.salt",
+                        "text": "Shengtai.salt"
+                    },
+                    "designerId": "ba4ef28d-0afb-4bbc-86ba-ef5e50f78ca1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.shouming",
+                        "text": "Shengtai.shouming"
+                    },
+                    "designerId": "c8dc0977-0132-4d82-bbaa-1635b095b5ff"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.soil",
+                        "text": "Shengtai.soil"
+                    },
+                    "designerId": "e43cfc2b-4895-411b-a940-fd2b479582f3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.sudu",
+                        "text": "Shengtai.sudu"
+                    },
+                    "designerId": "1968e1ed-4783-4590-9624-5cf62faa5306"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "shengtai.temperature",
+                        "text": "Shengtai.temperature"
+                    },
+                    "designerId": "c1ff73ad-39d7-4d3e-9268-bc0b230540c0"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.cankao_jiage",
+                        "text": "Engineering.cankao_jiage"
+                    },
+                    "designerId": "a0569b97-df57-4ca9-b64e-a4c6fabe310c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.miaomu_guige",
+                        "text": "Engineering.miaomu_guige"
+                    },
+                    "designerId": "1ef74ee9-0ca3-48bf-820f-815bc9b61186"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.sheji_jianyi",
+                        "text": "Engineering.sheji_jianyi"
+                    },
+                    "designerId": "10294fee-43c7-4893-85e1-45020645d041"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.shibie_tezheng",
+                        "text": "Engineering.shibie_tezheng"
+                    },
+                    "designerId": "63c33e48-bd77-4285-ba80-25a0118ad906"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.shigong_yaodian",
+                        "text": "Engineering.shigong_yaodian"
+                    },
+                    "designerId": "bcdf8abe-cb13-4075-9fab-fb6f28b7f139"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.yanghu_yaodian",
+                        "text": "Engineering.yanghu_yaodian"
+                    },
+                    "designerId": "78d2c318-d1ca-42dc-834f-524e157da083"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.yingyong_quyu",
+                        "text": "Engineering.yingyong_quyu"
+                    },
+                    "designerId": "8d6f641d-9540-4f7f-9db3-89e2c152988e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.zhongzhi_midu",
+                        "text": "Engineering.zhongzhi_midu"
+                    },
+                    "designerId": "e4fcdf89-0b1e-43ab-9b3c-58c351abd0dd"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "engineering.ziran_quyu",
+                        "text": "Engineering.ziran_quyu"
+                    },
+                    "designerId": "ce56bd62-714f-4cce-88ff-2b35b258ef93"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "2e3740e6-5e55-46dc-b551-1939f2492872",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "删除"
+                            },
+                            "designerId": "1ee8c62a-d241-4928-a358-0ec30b26dbb7",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "\r",
+                                            "selectedNode = this.up('gridpanel').down('#winCPZhongView').getSelectionModel().getSelection()[0];\r",
+                                            "console.log(selectedNode);\r",
+                                            "\r",
+                                            "Ext.getStore('ZhongStoreLocal').remove(selectedNode);\r",
+                                            "\r",
+                                            "\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "0b4d908d-0094-400c-90d6-f711506df4ab"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": "icons/paste.png",
+                                "layout|flex": null,
+                                "scale": "medium",
+                                "text": "粘贴"
+                            },
+                            "designerId": "38ea2dcc-557d-4134-99f5-89eab8976a09",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "\r",
+                                            "theStore = Ext.getStore('ZhongStoreLocal');\r",
+                                            "\r",
+                                            "if (theStore.count() === 0) {\r",
+                                            "    Ext.MessageBox.alert('提示','目前没有可用于粘贴的记录拷贝! 请拷贝后再粘贴.');\r",
+                                            "    return;\r",
+                                            "} else if (theStore.count() === 1){\r",
+                                            "    theRecord = theStore.getAt(0);\r",
+                                            "    theForm = Ext.ComponentQuery.query('form[title=\"种编辑表单\"]')[0];\r",
+                                            "    theForm.loadRecord(theRecord);\r",
+                                            "    return;\r",
+                                            "} else {\r",
+                                            "    theSelections = this.up('gridpanel').down('#winCPZhongView').getSelectionModel().getSelection();\r",
+                                            "    nLen = theSelections.length;\r",
+                                            "    \r",
+                                            "    if (nLen === 0){ //未选择，则提示选择\r",
+                                            "       Ext.MessageBox.alert('提示','有多条拷贝，请选择一条要粘贴的拷贝!');\r",
+                                            "       return false;\r",
+                                            "    } \r",
+                                            "    theRecord = theSelections[0];\r",
+                                            "    theForm = Ext.ComponentQuery.query('form[title=\"种编辑表单\"]')[0];\r",
+                                            "    theForm.loadRecord(theRecord);\r",
+                                            "    return;\r",
+                                            "}\r",
+                                            "\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "d5921c36-839a-4036-832c-07d98d15b95b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "9ad5fa47-42d6-4939-839d-88d66ace5c4d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "关闭"
+                            },
+                            "designerId": "62ac2517-fad4-4450-8b85-0d4396da0108",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "\r",
+                                            "this.up('window').close();\r",
+                                            ""
+                                        ]
+                                    },
+                                    "designerId": "0fc6965a-5f47-428a-a3b3-a4ab2157fdbd"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

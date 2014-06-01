@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ZhongStoreLocal",
+        "model": "ZhongModel",
+        "storeId": "ZhongStoreLocal"
+    },
+    "designerId": "983eb481-9515-4418-a225-ccb3bc96a763",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "3c49aa8e-8fdf-4a54-8b4e-6664c24d7418",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "bb009a91-7ceb-4909-90c7-be0a1f93788c"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,432 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ZhongModel"
+    },
+    "designerId": "80974d73-3ab9-4a08-843f-77786619c480",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ke_id",
+                "type": "string"
+            },
+            "designerId": "eb2499e2-cf4b-4ef8-b1f7-e3a5d53557ae"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ke_name"
+            },
+            "designerId": "b1f6cbbb-c7c9-4945-ba9c-d524a04f413f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "shu_id2",
+                "type": "string"
+            },
+            "designerId": "7173ef6b-430d-4c9e-8b84-72297eedb996"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "shu_name"
+            },
+            "designerId": "960b133a-8bcc-41e0-b368-9595ff44cd3b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": null,
+                "name": "zhong_id"
+            },
+            "designerId": "9a425282-1305-43d5-8139-4af6b3347b4b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cname"
+            },
+            "designerId": "023e019c-a4ac-4846-a081-478f722a4133"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ldname"
+            },
+            "designerId": "d8e90520-ba4e-4894-953c-7df384a7df53"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "aliases"
+            },
+            "designerId": "672d8567-4914-4b91-9817-a045d6d4b1e8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xingtai"
+            },
+            "designerId": "ada1f59e-8ed2-4f03-938e-6f270154261c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "gongneng"
+            },
+            "designerId": "e97b914b-a335-4450-bdfc-b9e6f42d2f7c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "guanshang"
+            },
+            "designerId": "8a573c16-601e-474e-97f7-9fa19473bfb0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "huaqi"
+            },
+            "designerId": "257c0bcc-926d-4a79-862b-ada91f236b1d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pics"
+            },
+            "designerId": "b4971fae-4e18-433d-9cb8-12f0ef659943"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pic_count",
+                "type": "int"
+            },
+            "designerId": "3396089a-fd2d-4c86-90e3-210b167b40bc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.genxi",
+                "name": "shengtai.genxi"
+            },
+            "designerId": "15edd571-f06a-49df-8438-92855cbe6f0e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.huminity",
+                "name": "shengtai.huminity"
+            },
+            "designerId": "cdf0b7e5-d3ed-470b-adea-18941ba0f1e1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.light",
+                "name": "shengtai.light"
+            },
+            "designerId": "423df7b8-eef9-44bc-bcb3-8feb38bbcc9a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.moisture",
+                "name": "shengtai.moisture"
+            },
+            "designerId": "4fcd5276-7d31-488b-819c-897ed093a8fb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.nanyi",
+                "name": "shengtai.nanyi"
+            },
+            "designerId": "2942b013-1784-4c1e-915c-1a525f971c75"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.salt",
+                "name": "shengtai.salt"
+            },
+            "designerId": "98404cc4-3f52-412d-9be3-d16e0dbff9b3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.shouming",
+                "name": "shengtai.shouming"
+            },
+            "designerId": "ffc41047-abef-4840-a547-32244323fd60"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.soil",
+                "name": "shengtai.soil"
+            },
+            "designerId": "f90b9056-cbd8-4cd5-b459-1828d6dea978"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.sudu",
+                "name": "shengtai.sudu"
+            },
+            "designerId": "c7994824-c287-445f-a6f0-3d805002af5e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "shengtai.temperature",
+                "name": "shengtai.temperature"
+            },
+            "designerId": "bfecd753-5f14-43ac-8908-69633673e809"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.cankao_jiage",
+                "name": "engineering.cankao_jiage"
+            },
+            "designerId": "629b0194-292d-4425-afa3-8fcf36d22ea7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.miaomu_guige",
+                "name": "engineering.miaomu_guige"
+            },
+            "designerId": "006b84a7-c085-44a2-971c-a496fa51522f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "engineering.sheji_jianyi"
+            },
+            "designerId": "3eff2e54-a53f-478b-8032-617bafd3de72"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.shibie_tezheng",
+                "name": "engineering.shibie_tezheng"
+            },
+            "designerId": "11684679-e692-4cac-8ea7-4a7b560989e8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.shigong_yaodian",
+                "name": "engineering.shigong_yaodian"
+            },
+            "designerId": "9e665e20-f3af-4337-9875-ea67365f60ee"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.yanghu_yaodian",
+                "name": "engineering.yanghu_yaodian"
+            },
+            "designerId": "1b936a47-7480-48a6-92f9-dec4c520e6ed"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.yingyong_quyu",
+                "name": "engineering.yingyong_quyu"
+            },
+            "designerId": "5e4bd494-935a-4022-bccc-64841e2f10d0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.zhongzhi_midu",
+                "name": "engineering.zhongzhi_midu"
+            },
+            "designerId": "fce3722a-378e-4c3f-8da9-be0762464da9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "engineering.ziran_quyu",
+                "name": "engineering.ziran_quyu"
+            },
+            "designerId": "6376e451-8fcb-4903-9f95-d1e00d6bca6a"
+        }
+    ]
+}

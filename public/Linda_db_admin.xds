@@ -1,0 +1,66 @@
+{
+    "name": "Linda_db_admin",
+    "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Large",
+                "builtIn": true,
+                "height": 1024,
+                "width": 1280
+            }
+        },
+        "urlPrefix": "http://localhost:3000",
+        "exportPath": "f:/mypub1",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "displayfield-ExtBox1-1320-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1278-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1335-inputEl": "Not Installed"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "c7af760a-c4e0-4f58-94ea-1f3b2b45cfa4",
+            "b1fd9a31-bf3a-4e6a-beef-647f563f4517",
+            "624cd5e6-2468-4dcd-962e-78d85136072f",
+            "0f91f555-e81a-470d-bd67-aa52f25edd20"
+        ],
+        "store": [
+            "b62edc64-fd93-4fb1-acc9-2263da1b6a5a",
+            "28583db6-01c5-4461-afea-d0454152028d",
+            "1c4e6775-f63f-4211-997e-8504113323f5",
+            "6e10107a-b537-405c-97d3-c34968cd5518",
+            "983eb481-9515-4418-a225-ccb3bc96a763",
+            "5919dad8-4216-468c-84a3-8ad8a3291877"
+        ],
+        "controller": [
+            "a105815b-df0c-418f-b27c-739272869d9b"
+        ],
+        "model": [
+            "a7119eca-0a0c-483e-b599-10db5cc6951e",
+            "798bad76-c50b-41c5-b533-2c0efa4a12ca",
+            "5c621be5-b7ad-4bdf-baa0-3c00430e49a0",
+            "80974d73-3ab9-4a08-843f-77786619c480",
+            "b8edfad8-03e5-4101-9190-50f73d9f65da"
+        ],
+        "resource": [
+            "d6abf358-36de-439c-a389-91e7ca761b77",
+            "d9071f1b-9145-45c4-a4f6-1ce1ea24e10b",
+            "601ca8b1-4e86-40fd-8447-50200e17d254"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
