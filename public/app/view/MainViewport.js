@@ -418,6 +418,36 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                         {
                                                             xtype: 'button',
                                                             handler: function(button, e) {
+                                                                //将当前form.record add到指定的本地store中；
+
+                                                                theForm = this.up('form[title="种编辑表单"]');
+                                                                theForm.updateRecord();
+                                                                theRecord=theForm.getRecord();
+
+                                                                theStore = Ext.getStore('ZhongStoreLocal');
+                                                                theStore.add(theRecord);
+
+                                                                Ext.MessageBox.alert('成功','拷贝完成!');
+
+                                                            },
+                                                            text: '拷贝'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
+                                                                //弹出窗口，显示当前本地store中存储的内容；
+                                                                //选择一行，粘贴，则逐一record.get(fieldname),并复制给相应的form.field字段；
+                                                                //一些特殊字段须要特殊处理；
+
+
+                                                                theWindow = Ext.create('Linda_db_admin.view.winCPZhong');
+                                                                theWindow.show();
+                                                            },
+                                                            text: '粘贴'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            handler: function(button, e) {
                                                                 //只有在用户已经在树上选择了一个属，且该属下没有种的情况下，才能建立一个新种。
                                                                 //新种的建立，是在空的store中加入一个新记录，并上提到form上。
 
@@ -824,7 +854,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                             frame: true,
                                             width: 250,
                                             autoScroll: true,
-                                            collapsed: false,
+                                            collapsed: true,
                                             collapsible: true,
                                             title: '种图片维护',
                                             layout: {

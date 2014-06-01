@@ -32,11 +32,13 @@ Ext.application({
         'KeShuTreeStore',
         'KeStore',
         'ShuStore',
-        'PicStore'
+        'PicStore',
+        'ZhongStoreLocal'
     ],
     views: [
         'winSelectPic',
-        'MyPanel15'
+        'MyPanel15',
+        'winCPZhong'
     ],
     controllers: [
         'MyController'
