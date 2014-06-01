@@ -8,7 +8,7 @@ set :rvm_type, :user
 
 set :application, "Linda-zwzydb-admin"
 set :repository,  "git@github.com:hitfishking/Linda-zwzydb-admin.git"
-set :deploy_to, "/opt/nginx/html/rails_apps/Linda-zwzydb-admin"
+set :deploy_to, "/opt/nginx/html/rails_apps/Linda-zwzydb-adminx"
 set :scm, :git
 set :branch, "master"
 set :user, "hitfishking"

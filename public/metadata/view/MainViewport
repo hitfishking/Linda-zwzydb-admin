@@ -1707,7 +1707,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "autoScroll": true,
-                                        "collapsed": true,
+                                        "collapsed": false,
                                         "collapsible": true,
                                         "container|align": "stretch",
                                         "frame": true,

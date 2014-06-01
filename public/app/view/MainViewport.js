@@ -854,7 +854,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                             frame: true,
                                             width: 250,
                                             autoScroll: true,
-                                            collapsed: true,
+                                            collapsed: false,
                                             collapsible: true,
                                             title: '种图片维护',
                                             layout: {
