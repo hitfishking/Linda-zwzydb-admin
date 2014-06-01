@@ -1,0 +1,11 @@
+{
+    "profiles": [
+        {
+            "name": "mydesktop",
+            "width": 1360,
+            "height": 768,
+            "builtIn": false,
+            "fw": "ext"
+        }
+    ]
+}
