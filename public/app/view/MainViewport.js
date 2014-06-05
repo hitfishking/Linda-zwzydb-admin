@@ -66,7 +66,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                 {
                                     xtype: 'label',
                                     height: 0,
-                                    html: '<h1>园林植物种质资源数据库  数据管理系统</h1>',
+                                    html: '<h1 style="text-align:center">园林植物应用 数据管理系统</h1>',
                                     width: 0
                                 }
                             ]

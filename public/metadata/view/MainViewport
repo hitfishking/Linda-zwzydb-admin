@@ -68,7 +68,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "height": 0,
-                                "html": "<h1>园林植物种质资源数据库  数据管理系统</h1>",
+                                "html": "<h1 style=\"text-align:center\">园林植物应用 数据管理系统</h1>",
                                 "text": null,
                                 "width": 0
                             },
