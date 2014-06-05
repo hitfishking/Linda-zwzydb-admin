@@ -64,7 +64,7 @@ class PlantController < ApplicationController
 			return false
 		end
 
-    tmp_zhong.update_attributes!(populate_zhong_json())
+		tmp_zhong.update_attributes!(populate_zhong_json())
 
 		render :json => {:success => true, :message => '[Server]: 种信息更新成功！' }
 	end
@@ -99,36 +99,36 @@ class PlantController < ApplicationController
 		json_zhong = {
 				:shu_id => params['shu_id2'],
 				#:_id => params['zhong_id'],  #从种instance出发update，故不必填写此字段.
-		    :cname => params['cname'],
-		    :ldname => params['ldname'],
-		    :aliases => params['aliases'],
-		    :xingtai => params['xingtai'],
-		    :gongneng => params['gongneng'],
-		    :guanshang => params['guanshang'],
-		    :huaqi => params['huaqi'],
-		    :pics => params['pics'],
-		    :shengtai => {
-				    :genxi => params['shengtai.genxi'],
-		        :huminity => params['shengtai.huminity'],
-		        :light => params['shengtai.light'],
-		        :moisture => params['shengtai.moisture'],
-		        :nanyi => params['shengtai.nanyi'],
-		        :salt => params['shengtai.salt'],
-		        :shouming => params['shengtai.shouming'],
-		        :soil => params['shengtai.soil'],
-		        :sudu => params['shengtai.sudu'],
-		        :temperature => params['shengtai.temperature']
-		    },
-		    :engineering => {
-				    :ziran_quyu => params['engineering.ziran_quyu'],
-				    :yingyong_quyu => params['engineering.yingyong_quyu'],
-		        :shibie_tezheng => params['engineering.shibie_tezheng'],
-		        :zhongzhi_midu => params['engineering.zhongzhi_midu'],
-		        :miaomu_guige => params['engineering.miaomu_guige'],
-		        :sheji_jianyi => params['engineering.shigong_yaodian'],
-		        :yanghu_yaodian => params['engineering.yanghu_yaodian'],
-		        :cankao_jiage => params['engineering.cankao_jiage']
-		    }
+				:cname => params['cname'],
+				:ldname => params['ldname'],
+				:aliases => params['aliases'].split('、'),
+				:xingtai => params['xingtai'],
+				:gongneng => params['gongneng'],
+				:guanshang => params['guanshang'],
+				:huaqi => params['huaqi'],
+				:pics => params['pics'],
+				:shengtai => {
+						:genxi => params['shengtai.genxi'],
+						:huminity => params['shengtai.huminity'],
+						:light => params['shengtai.light'],
+						:moisture => params['shengtai.moisture'],
+						:nanyi => params['shengtai.nanyi'],
+						:salt => params['shengtai.salt'],
+						:shouming => params['shengtai.shouming'],
+						:soil => params['shengtai.soil'],
+						:sudu => params['shengtai.sudu'],
+						:temperature => params['shengtai.temperature']
+				},
+				:engineering => {
+						:ziran_quyu => params['engineering.ziran_quyu'],
+						:yingyong_quyu => params['engineering.yingyong_quyu'].split('、'),
+						:shibie_tezheng => params['engineering.shibie_tezheng'],
+						:zhongzhi_midu => params['engineering.zhongzhi_midu'],
+						:miaomu_guige => params['engineering.miaomu_guige'],
+						:sheji_jianyi => params['engineering.shigong_yaodian'],
+						:yanghu_yaodian => params['engineering.yanghu_yaodian'],
+						:cankao_jiage => params['engineering.cankao_jiage']
+				}
 		}
 	end
 
@@ -137,7 +137,7 @@ class PlantController < ApplicationController
 		p "===upload_pics======"
 		p params
 
-	  unless request.get?
+		unless request.get?
 			unless params[:upfile].original_filename.empty?
 				uploaded_io = params[:upfile]
 				tmp_file = File.open(Rails.root.join('public', 'upfiles', uploaded_io.original_filename), 'wb+') do |file|
@@ -146,7 +146,7 @@ class PlantController < ApplicationController
 				if tmp_file.nil?
 					render :json => {:success => false, :message => '[Server]: 上传文件发生错误，请检查！'}; return false
 				end
-				#正确上传文件后，立即将此文件上传到Aliyun::OSS Bucket的指定目录下.
+				                                                                                         #正确上传文件后，立即将此文件上传到Aliyun::OSS Bucket的指定目录下.
 				pic_path = params['picpath']
 				if pic_path.nil? || pic_path == ""
 					render :json => {:success => false, :message => '[Server]: 没有指定文件路径，请检查！'}; return false
@@ -157,7 +157,7 @@ class PlantController < ApplicationController
 
 				render :json => {:success => true, :message => '[Server]: 文件上传成功!'}; return true
 			end
-	  end
+		end
 
 
 	end
@@ -179,12 +179,14 @@ class PlantController < ApplicationController
 
 		#查询Aliyun::OSS中，该种的图片数量
 		oss_store = Bucket.find('pic-store')
-		pics_count = oss_store.objects(:max_keys => 300, :prefix => tmp_zhong.pics ).size - 1
+		pics_count = oss_store.objects(:max_keys => 300, :prefix => tmp_zhong.pics ).size
+		p "===tmp_zhong.pics==="; p tmp_zhong.pics
+		p "===piccount==="; p pics_count
 
 		tmp_pic_list = []
 		pics_count.times do |i|
 			tmp_j = {}
-			#形如：http://pic-store.oss-cn-qingdao.aliyuncs.com/草本/矮牵牛/3.jpg
+			                                                                                                   #形如：http://pic-store.oss-cn-qingdao.aliyuncs.com/草本/矮牵牛/3.jpg
 			tmp_j['pic_path'] = "http://pic-store.oss-cn-qingdao.aliyuncs.com/#{tmp_zhong.pics}#{i + 1}.jpg"   #从1开始
 			tmp_j['pic_name'] = "#{i + 1}.jpg"
 			tmp_pic_list << tmp_j
@@ -219,15 +221,15 @@ class PlantController < ApplicationController
 
 	def send_ke
 		p "====send_ke====="
-		#records_found = Ke.all.entries
+		                                #records_found = Ke.all.entries
 		p params
 
 		records_found = []              #返回string类型_id
 		for i in (0..Ke.all.count - 1)
-			 tmp_hash = {}
-			 tmp_hash["_id"] = Ke.all[i]._id.to_s
-			 tmp_hash["name"] = Ke.all[i].name
-			 records_found << tmp_hash
+			tmp_hash = {}
+			tmp_hash["_id"] = Ke.all[i]._id.to_s
+			tmp_hash["name"] = Ke.all[i].name
+			records_found << tmp_hash
 		end
 		render :json => {:data => records_found }
 
@@ -238,7 +240,7 @@ class PlantController < ApplicationController
 		#records_found = Shu.all.entries
 		p params
 		p "---p params['filter'][3]-------"
-		#p params['filter'][3]
+		                                #p params['filter'][3]
 
 		records_found = []              #返回string类型_id
 		for i in (0..Shu.all.count - 1)
@@ -260,47 +262,47 @@ class PlantController < ApplicationController
 		p params
 
 		case params[:ntype]
-				when ""    #root节点的ntype为空
-						tmp_arr_ke = []
-						for i in 0..(Ke.all.count - 1)
-							tmp_arr_ke <<
-									{	:text => Ke.all[i].name,
-										:id => Ke.all[i]._id.to_s,
-										:leaf => false,
-										:expanded => false,
-									  :ntype => '科',
-									  :newnode => false
-									}
-						end
-						render :json => tmp_arr_ke
+			when ""    #root节点的ntype为空
+				tmp_arr_ke = []
+				for i in 0..(Ke.all.count - 1)
+					tmp_arr_ke <<
+							{	:text => Ke.all[i].name,
+							   :id => Ke.all[i]._id.to_s,
+							   :leaf => false,
+							   :expanded => false,
+							   :ntype => '科',
+							   :newnode => false
+							}
+				end
+				render :json => tmp_arr_ke
 
-				when "科"
-						tmp_arr_shu = []
-						for j in 0..(Ke.where(:_id => params[:id])[0].shus.count - 1)
-							tmp_arr_shu <<
-									{  :text => Ke.where(:_id => params[:id])[0].shus[j].name,
-									   :id => Ke.where(:_id => params[:id])[0].shus[j]._id.to_s,
-									   :leaf => false,
-									   :expanded => false,
-									   :ntype => '属',
-									   :newnode => false
-									}
-						end
-						render :json => tmp_arr_shu
+			when "科"
+				tmp_arr_shu = []
+				for j in 0..(Ke.where(:_id => params[:id])[0].shus.count - 1)
+					tmp_arr_shu <<
+							{  :text => Ke.where(:_id => params[:id])[0].shus[j].name,
+							   :id => Ke.where(:_id => params[:id])[0].shus[j]._id.to_s,
+							   :leaf => false,
+							   :expanded => false,
+							   :ntype => '属',
+							   :newnode => false
+							}
+				end
+				render :json => tmp_arr_shu
 
-				when "属"
-					tmp_arr_zhong = []
-					for k in 0..(Shu.where(:_id => params[:id])[0].zhongs.count - 1)
-						tmp_arr_zhong <<
-								{	 :text => Shu.where(:_id => params[:id])[0].zhongs[k].cname,
-								   :id => Shu.where(:_id => params[:id])[0].zhongs[k]._id.to_s,
-								   :leaf => true,
-								   :expanded => true,
-								   :ntype => '种',
-								   :newnode => false
-								}
-					end
-					render :json => tmp_arr_zhong
+			when "属"
+				tmp_arr_zhong = []
+				for k in 0..(Shu.where(:_id => params[:id])[0].zhongs.count - 1)
+					tmp_arr_zhong <<
+							{	 :text => Shu.where(:_id => params[:id])[0].zhongs[k].cname,
+							    :id => Shu.where(:_id => params[:id])[0].zhongs[k]._id.to_s,
+							    :leaf => true,
+							    :expanded => true,
+							    :ntype => '种',
+							    :newnode => false
+							}
+				end
+				render :json => tmp_arr_zhong
 
 			else
 				#render :json => {:success => true}
@@ -355,13 +357,13 @@ class PlantController < ApplicationController
 			str_ntype = params["records"][i]["ntype"]
 
 			if str_ntype == "科"
-					Ke.where(:_id => str_id)[0].delete
-					render  :json => {:success => true}; return
+				Ke.where(:_id => str_id)[0].delete
+				render  :json => {:success => true}; return
 			elsif str_ntype == "属"
-					Shu.where(:_id => str_id)[0].delete
-					render  :json => {:success => true}; return
+				Shu.where(:_id => str_id)[0].delete
+				render  :json => {:success => true}; return
 			else
-					render  :json => {:success => false}; return
+				render  :json => {:success => false}; return
 			end
 
 		end
