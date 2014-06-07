@@ -45,7 +45,6 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
-                            hidden: true,
                             dataIndex: 'ke_id',
                             text: 'Ke_id'
                         },
@@ -56,7 +55,6 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            hidden: true,
                             dataIndex: 'shu_id2',
                             text: 'Shu_id2'
                         },
@@ -67,7 +65,6 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            hidden: true,
                             dataIndex: 'zhong_id',
                             text: 'Zhong_id'
                         },
@@ -235,17 +232,29 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                                     xtype: 'button',
                                     handler: function(button, e) {
 
-                                        theStore = Ext.getStore('ZhongStoreLocal');
+                                        zhongLocalStore = Ext.getStore('ZhongStoreLocal');
+                                        zhongRemoteStore = Ext.getStore('ZhongStore');
+                                        zhongForm = Ext.ComponentQuery.query('form[title="种编辑表单"]')[0];
 
-                                        if (theStore.count() === 0) {
+                                        //----------------------------------------------------------
+
+                                        if (zhongLocalStore.count() === 0) {
                                             Ext.MessageBox.alert('提示','目前没有可用于粘贴的记录拷贝! 请拷贝后再粘贴.');
                                             return;
-                                        } else if (theStore.count() === 1){
-                                            theRecord = theStore.getAt(0);
-                                            theForm = Ext.ComponentQuery.query('form[title="种编辑表单"]')[0];
-                                            theForm.loadRecord(theRecord);
+                                        }
+
+                                        if (zhongLocalStore.count() === 1){
+                                            theRecord = zhongLocalStore.getAt(0);
+                                            zhongRemoteStore.removeAll();
+                                            zhongsAdded = zhongRemoteStore.add(theRecord);
+                                            zhongsAdded[0].store = zhongRemoteStore;
+
+                                            zhongForm.loadRecord(zhongsAdded[0]);
+                                            console.log(zhongsAdded[0].store);
                                             return;
-                                        } else {
+                                        }
+
+                                        if (zhongLocalStore.count() > 1){
                                             theSelections = this.up('gridpanel').down('#winCPZhongView').getSelectionModel().getSelection();
                                             nLen = theSelections.length;
 
@@ -253,9 +262,11 @@ Ext.define('Linda_db_admin.view.winCPZhong', {
                                                 Ext.MessageBox.alert('提示','有多条拷贝，请选择一条要粘贴的拷贝!');
                                                 return false;
                                             }
-                                            theRecord = theSelections[0];
-                                            theForm = Ext.ComponentQuery.query('form[title="种编辑表单"]')[0];
-                                            theForm.loadRecord(theRecord);
+                                            theRecord = theSelections[0];  //只对第一个选择有效;目前grid设置只能选择一个;
+                                            zhongRemoteStore.removeAll();
+                                            zhongsAdded = zhongRemoteStore.add(theRecord);
+
+                                            zhongForm.loadRecord(zhongsAdded[0]);
                                             return;
                                         }
 

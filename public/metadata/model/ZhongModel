@@ -6,7 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ZhongModel"
+        "designer|userClassName": "ZhongModel",
+        "idProperty": "zhong_id"
     },
     "designerId": "80974d73-3ab9-4a08-843f-77786619c480",
     "cn": [

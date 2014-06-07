@@ -56,8 +56,8 @@ Ext.define('Linda_db_admin.store.ZhongStore', {
         //ZhongDataStore的load事件函数，将当前record记录load到form中(loadRecord())；
 
         //Ext.ComponentQuery.query()返回的是数组.
-        theForm = Ext.ComponentQuery.query('form[title="种编辑表单"]');
-        theForm[0].loadRecord(records[0]);
+        theForms = Ext.ComponentQuery.query('form[title="种编辑表单"]');
+        theForms[0].loadRecord(records[0]);
         // kecombo = theForm[0].down('combobox[itemId="kecombo"]');
         // kecombo.value = records[0].data.ke_id;
 

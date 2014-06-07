@@ -57,6 +57,10 @@ class PlantController < ApplicationController
 	def zhong_update
 		p "====zhong_update====="
 		p params
+		if params['zhong_id'] == '111'    #不得已为之；copy/paste，store.sync()触发的是update，却不是create.
+		  redirect_to :action => zhong_create and return
+			#return
+		end
 
 		tmp_zhong = Zhong.where(:_id => params['zhong_id'])[0]
 		if tmp_zhong.nil?
@@ -89,9 +93,14 @@ class PlantController < ApplicationController
 		p "====zhong_delete====="
 		p params
 
-		Zhong.where(:_id => params['zhong_id'])[0].destroy
+		theZhongs = Zhong.where(:_id => params['zhong_id'])
+		if theZhongs.count > 0  #不得已为之，copy/paste新建时，会自动调用一次delete,须排除这种情况;
+		  	theZhongs[0].destroy
+			  render :json => {:success => true, :message => '[Server]: 该种已成功删除!' }
+				return
+		end
 
-		render :json => {:success => true, :message => '[Server]: 该种已成功删除!' }
+		render  :json => {:success => false, :message => '[Server]: 成功(未知删除操作!)'}
 	end
 
 	#用params[]构造种json数据
@@ -158,7 +167,6 @@ class PlantController < ApplicationController
 				render :json => {:success => true, :message => '[Server]: 文件上传成功!'}; return true
 			end
 		end
-
 
 	end
 

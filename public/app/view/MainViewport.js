@@ -340,25 +340,52 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                         {
                                                             xtype: 'button',
                                                             handler: function(button, e) {
-                                                                theForm = this.up('form[title="种编辑表单"]');
-                                                                theForm.updateRecord();
 
-                                                                // if (!theForm.isValid()) {
+                                                                zhongRemoteStore = Ext.getStore('ZhongStore');
+                                                                zhongForm = this.up('form[title="种编辑表单"]');
+                                                                zhongForm.updateRecord();
+
+                                                                // if (!zhongForm.isValid()) {
                                                                 //    alert('Have invalid values.');
                                                                 //     return;
                                                                 // }
 
 
-                                                                theRecord=theForm.getRecord();
+                                                                theRecord=zhongForm.getRecord();
+                                                                // console.log(theRecord);
+                                                                // console.log(theRecord.store);
+                                                                // console.log(theRecord.data);
 
-                                                                theRecord.store.sync({
-                                                                    success: function(batch, options){
-                                                                        Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);
-                                                                    },
-                                                                    failure: function(batch, options){
-                                                                        Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);
-                                                                    }
-                                                                });
+
+                                                                if (theRecord.get('zhong_id') === '111'){ //新建的记录，zhong_id == '111'
+
+                                                                    //"操作型Store"会导致Store内包含历史CRUD多种行为，导致sync()时产生某些不期望的动作；
+                                                                    //故弃用Store本身的ajaxProxy,而直接使用Ext.Ajax；
+                                                                    Ext.Ajax.request({
+                                                                        url: 'plant/zhong_create',
+                                                                        method: 'POST',
+                                                                        jsonData: theRecord.data,
+                                                                        success: function(response, opts) {
+                                                                            Ext.MessageBox.alert('成功', response.responseText);
+                                                                        },
+                                                                        failure: function(response, opts) {
+                                                                            Ext.MessageBox.alert('失败', response.responseText);
+                                                                        }
+                                                                    });
+
+                                                                } else {
+
+                                                                    theRecord.store.sync({
+                                                                        success: function(batch, options){
+                                                                            Ext.MessageBox.alert('成功', batch.proxy.getReader().rawData.message);
+                                                                        },
+                                                                        failure: function(batch, options){
+                                                                            Ext.MessageBox.alert('失败', batch.proxy.getReader().rawData.message);
+                                                                        }
+                                                                    });
+
+                                                                }
+
 
 
                                                             },
@@ -420,12 +447,14 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                                             handler: function(button, e) {
                                                                 //将当前form.record add到指定的本地store中；
 
-                                                                theForm = this.up('form[title="种编辑表单"]');
-                                                                theForm.updateRecord();
-                                                                theRecord=theForm.getRecord();
+                                                                zhongForm = this.up('form[title="种编辑表单"]');
+                                                                zhongStoreLocal = Ext.getStore('ZhongStoreLocal');
 
-                                                                theStore = Ext.getStore('ZhongStoreLocal');
-                                                                theStore.add(theRecord);
+                                                                zhongForm.updateRecord();
+                                                                theRecord=zhongForm.getRecord();
+
+                                                                zhongsAdded = zhongStoreLocal.add(theRecord);
+                                                                zhongsAdded[0].set('zhong_id','111');
 
                                                                 Ext.MessageBox.alert('成功','拷贝完成!');
 
@@ -854,7 +883,7 @@ Ext.define('Linda_db_admin.view.MainViewport', {
                                             frame: true,
                                             width: 250,
                                             autoScroll: true,
-                                            collapsed: false,
+                                            collapsed: true,
                                             collapsible: true,
                                             title: '种图片维护',
                                             layout: {

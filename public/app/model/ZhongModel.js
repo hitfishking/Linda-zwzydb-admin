@@ -20,6 +20,8 @@ Ext.define('Linda_db_admin.model.ZhongModel', {
         'Ext.data.Field'
     ],
 
+    idProperty: 'zhong_id',
+
     fields: [
         {
             name: 'ke_id',
